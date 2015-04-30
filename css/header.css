@@ -26,3 +26,19 @@ a {
 a:hover, a.on {
 	color: #cc3333;
 }
+
+.hamburger {
+	text-align: center;
+	font-size: 30px;
+	margin-top: 0px;
+}
+
+p:hover {
+	color: #ffffff;
+}
+
+p {
+	width: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
