@@ -1,0 +1,273 @@
+@charset "UTF-8";
+/* Remember normalize.css loads first */
+/* lt blue = #82b2dd, ltr blue = #cadbef, blue = #3752a2, yellow = #ffed8f, green = #027932, lt green = #95ca44 */
+html{margin:0px; padding:0px}
+body{font:100% 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; padding:0px; font-size:14px; line-height:17px; text-align:center; color:#555555; margin:0px; height:100%; background:#3752a2}
+form{margin:0px; padding:0px}
+fieldset{margin:0px; padding:0px}
+h1{font:bold 24px/26px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#3752a2; text-decoration:none}
+h2{font:bold 26px/28px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#3752a2; text-decoration:none}
+h3{font:bold 20px/22px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#027932; text-decoration:none; text-align:left; margin:6px 12px}
+h4{font:bold 15px/17px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#555555; text-decoration:none}
+h5{font:bold 15px/17px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#555555; text-decoration:none}
+p{font:normal 14px/17px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; text-align:left; margin:0px 0px 10px; padding:0px}
+a, a:link, a:visited, a:active{color:#ffed8f; text-decoration:none; font-weight:bold}
+#right a, #right a:link, #right a:visited, #right a:active{color:#027932; text-decoration:none; font-weight:bold}
+a:hover, #right a:hover{color:#95ca44; text-decoration:underline}
+img{border:none}
+a img{border:none; outline:none}
+ol, ul{font:normal 14px/18px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; text-decoration:none; text-align:left}
+#right ol, #right ul{color:#000000}
+ul.nobullet{list-style:none; margin-left:-12px}
+ul li{}
+ul li ul{}
+ul li ul li{}
+ol li{margin-right:12px}
+ol li ul{margin-top:6px; margin-bottom:8px; margin-left:-12px}
+ol li ul li{margin-left:-12px; margin-right:12px;	list-style-type: disc}
+
+/* Misc classes */
+.caps{text-transform:uppercase;}
+.hidden{display:none}
+.clearfloat{clear:both; padding:0px; margin:0px; height:0px; width:0px}
+.nowrap{white-space:nowrap}
+.content_p{margin:0px 12px 10px}
+.content_p_clear{margin:0px 12px 18px 6px; display:block; clear:both; float:left}
+.content_h2{margin:2px 12px 10px !important; font-size:24px !important}
+.golf_h2{margin:2px 12px 10px !important; font-size:24px !important; text-align:left;}
+.uhoh{color:#900}
+.center{text-align:center}
+.note{color:#900; font-size:12px; margin-bottom:6px !important; display:block}
+.abs_pos_fix{display:block; height:90px; width:400px; clear:right; margin:0px; padding:0px}
+.inline_img_rt{float:right; display:inline; clear:right; margin:0px; padding:0px 15px 15px}
+.inline_img_rt_top_pad{float:right; display:inline; clear:right; margin:0px; padding:6px 15px 15px}
+.red{color:#CC0000}
+
+/* Accessibility */
+#skip{text-indent:-9000px; line-height:1px; height:0px; width:0px; font-size:1px; display:none}
+#jump_content{display:none}
+#top{margin:0px; padding:0px; height:0px; width:0px}
+
+/* Structural */
+#wrapper{margin:0px auto; padding:0px; width:100%; min-width:974px}
+/* Header */
+#header_wrapper{margin:0px; padding:22px 0px 0px; width:100%; min-width:974px; height:207px; background:url(../images/header_ground.gif) repeat-x top left; text-align:center}
+header{width:974px; margin:0px auto; padding:0px; height:207px}
+#header_left{width:238px; float:left; display:inline; padding:0px; margin:0px; height:200px; background:#ffffff}
+#header_right{float:left; display:inline; width:736px; padding:0px; margin:0px; height:200px; background:#82b2dd}
+#header_right .slide_img{display:none}
+#header_bottom{float:left; display:inline; height:7px; width:974px; padding:0px; margin:0px; background:#3752a2}
+#logo{margin:8px 0px 0px}
+/* Content */
+#content_wrapper{margin:0px; padding:0px; width:100%; height:100%; min-height:430px; min-width:974px; text-align:center; background:url(../images/ground.gif) repeat 0px 0px; position:relative}
+#content{width:974px; margin:0px auto; padding:0px; height:100%; min-height:430px; background:#3752a2; text-align:center; position:relative}
+#left{float:left; display:inline; width:238px; height:100%; padding:0px; margin:0px; background:#3752a2; position:relative}
+#right{float:left; display:inline; width:736px; height:100%; padding:0px; margin:0px; text-align:center; background:#ffffff; min-height:713px}
+/* Navigation */
+nav{width:238px; padding:0px; margin:0px 0px 20px; display:block; position:relative}
+nav ul{list-style:none; list-style-image:url(../images/clear_pixel.gif); margin:0px; display:block; width:238px; padding:0px}
+nav ul li{font-family: 'niobiumregular', Arial, sans-serif; text-wrap:none; white-space:nowrap; font-size:24px; line-height:24px; font-weight:normal !important}
+.no-fontface nav ul li{font-family: Arial, sans-serif; text-wrap:none; white-space:nowrap; font-size:21px; line-height:21px; font-weight:bold}
+nav ul li a, nav ul li a:link, nav ul li a:active, nav ul li a:visited{font-family: 'niobiumregular', Arial, sans-serif; font-weight:normal !important; letter-spacing:1px; word-spacing: -8px; font-size:24px; line-height:24px; height:30px; display:block; padding:8px 0px 0px 12px; margin:0px; width:226px; background:url(../images/nav_ground.gif) repeat-x 0px 0px; text-decoration:none; color:#ffed8f; text-wrap:none; white-space:nowrap}
+.no-fontface nav ul li a, .no-fontface nav ul li a:link, .no-fontface nav ul li a:active, .no-fontface nav ul li a:visited{font-family: Arial, sans-serif; font-weight:bold; letter-spacing:0px; word-spacing: 0px; font-size:21px; line-height:21px; height:30px; display:block; padding:8px 0px 0px 12px; margin:0px; width:226px; background:url(../images/nav_ground.gif) repeat-x 0px 0px; text-decoration:none; color:#ffed8f; text-wrap:none; white-space:nowrap}
+nav ul li a:hover{background:url(../images/nav_active_ground.gif) repeat-x 0px 0px; text-decoration:none; color:#3752a2}
+nav ul li a.active, nav ul li a.active:link, nav ul li a.active:active, nav ul li a.active:visited{background:url(../images/nav_active_ground.gif) repeat-x 0px 0px; text-decoration:none; color:#3752a2}
+nav ul li a.active:hover{background:url(../images/nav_active_ground.gif) repeat-x 0px 0px; text-decoration:none}
+/* Auction Nav */
+nav ul li ul{list-style:none; list-style-image:url(../images/clear_pixel.gif); margin:0px; display:block; width:238px; padding:0px}
+nav ul li ul li{font:bold 14px/16px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif !important}
+nav ul li ul li a, nav ul li ul li a:link, nav ul li ul li a:active, nav ul li ul li a:visited{font:bold 14px/16px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif !important; letter-spacing:0px; word-spacing:0px; height:19px; background:#3752a2 url(../images/clear_pixel.gif); color:#ffffff; text-decoration:none; margin:0px; padding:1px 0px 0px 24px; width:214px}
+nav ul li ul li a:hover{background:#cadbef url(../images/clear_pixel.gif); color:#3752a2; text-decoration:none; font-weight:bold}
+nav ul li ul li a.active, nav ul li ul li a.active:link, nav ul li ul li a.active:active, nav ul li ul li a.active:visited{background:#cadbef url(../images/clear_pixel.gif); color:#3752a2; font-weight:bold}
+nav ul li ul li a.active:hover{background:#cadbef url(../images/clear_pixel.gif); color:#3752a2; text-decoration:none; font-weight:bold}
+/* Left */
+#left_footer{height:170px; width:238px; padding:0px; margin:0px; display:block; position:relative; bottom:-39px}
+#left_footer_map{height:117px; width:238px}
+#left_footer_map img{margin:0px 14px 2px}
+#left_footer a{font-size:12px; margin:0px 0px 6px}
+#left_footer_share{height:34px; background:#cadbef; display:block; width:238px}
+#add_this{float:left; display:inline; width:125px; height:33px; margin:9px 0px 0px 9px; padding:0px; clear:none}
+#fb_like{float:left; display:inline; width:94px; height:33px; margin:7px 0px 0px 10px; padding:0px; overflow:visible}
+.fb-like{overflow:visible}
+/* Right */
+#right_header{display:block; width:736px; clear:right}
+#right_header h1{text-indent:-9000px; margin:0px; padding:0px; font-size:1px; line-height:0px}
+#right_header.home{padding:194px 0px 0px; /* height:86px; */ /* height:12px; */ height:auto; background:url(../images/home_headline.gif) no-repeat 0px 0px; margin:0px}
+#right_header.content{padding:76px 0px 0px; /* height:41px; */ /* height:16px; */ height:auto; background:url(../images/content_headline.gif) no-repeat 0px 0px}
+#right_header.home h2{font:bold 32px/36px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#3752a2; text-decoration:none; text-align:center; margin:6px 0px 0px; padding:0px}
+#right_header.home h3{font:bold 22px/24px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#027932; text-decoration:none; text-align:center; margin:0px; padding:0px}
+#right_header.content h2{font:bold 32px/36px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#3752a2; text-decoration:none; text-align:left; margin:0px; padding:0px}
+.pop_video{margin:20px auto;display:block}
+/* Footer */
+#footer_wrapper{margin:0px; padding:0px; width:100%; min-width:974px; height:85px; background:#3752a2; position:relative}
+#footer_top{width:100%; padding:0px; margin:0px 0px 22px; height:7px; background:#ffed8f; display:block}
+footer{width:974px; margin:0px auto; padding:0px 0px 20px; height:65px; font-size:11px !important; color:#ffed8f}
+footer a{font-size:11px}
+address{display:block; margin:0px}
+#unc_footer{float:left; margin:0px 12px 0px 12px; padding:0px; display:inline}
+#footer_wrapper ul{list-style:none !important; margin:-4px 0px 0px -24px; float:left; display:inline; text-align:left !important; clear:none}
+#footer_wrapper ul li{list-style:none; margin:0px 0px -2px; text-align:left !important}
+#fortyoneofive{width:34px; height:30px; display:block; float:right; margin:0px; padding:0px; text-indent:-9000px; font-size:1px; line-height:0px; text-align:left}
+#fortyoneofive a{width:34px; height:30px; display:block; background:url(../images/4105.gif) no-repeat 0px 0px}
+#fortyoneofive a:hover{background:url(../images/4105.gif) no-repeat 0px -30px}
+
+/* Specific */
+#nomads_wrapper{margin:0px 0px 12px; padding:0px; width:736px; min-height:120px; text-align:center; clear:both; display:block}
+#nomads{margin:0px auto; padding:0px; width:460px; min-height:120px}
+#nomads img{padding:0px; margin:0px 16px 0px 0px; float:left; display:inline}
+.nomads_intro{font:bold 26px/28px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; margin:50px 0px 0px; padding:0px; float:left; display:inline}
+.nomads_title{font-family: 'niobiumregular', Arial, sans-serif; font-weight:normal !important; letter-spacing:1px; word-spacing: -8px; font-size:46px; line-height:48px; color:#027932; margin:0px; padding:0px; float:left; display:inline; text-transform:uppercase; clear:right}
+.free{color:#ffffff; display:block; width:100%; padding:6px 0px; margin:22px 0px 18px; background:#027932; font-size:18px; line-height:20px; text-align:center}
+.free_first_line{color:#ffed8f; font-size:20px; line-height:22px;}
+.green_bullet{color:#95ca44}
+.anniv_headline{font-family: 'niobiumregular', Arial, sans-serif; font-weight:normal !important; letter-spacing:1px; word-spacing: -8px; font-size:28px; line-height:30px; color:#027932; text-align:center; text-transform:uppercase; background:#95ca44; padding:5px 0px 2px; margin:0px; position:absolute; bottom:34px; left:238px; right:0px}
+.anniv{text-align:center; color:#027932; font:bold 22px/34px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; margin:0px; padding:0px; height:34px; position:absolute; bottom:0px; left:268px; right:30px}
+.anniv_yr{color:#3752a2}
+.bid_scheduling_notice{color:#ffffff; display:block; width:100%; padding:4px 0px; margin:8px 0px 0px; background:#CC3333; font-size:15px; line-height:17px; font-weight:bold; text-align:center}
+
+/* List View */
+.cat_wrapper{clear:both; display:block; width:736px; padding:0px; margin:0px auto 4px}
+.cat_wrapper h3{display:block; background:#82b2dd; width:694px; height:22px; padding:2px 2px 2px 10px; margin:0px 0px 4px; color:#ffffff; font-size:18px; float:left; clear:none}
+.cat_wrapper h3.full_h3{display:block; background:#82b2dd; width:714px; height:22px; padding:2px 12px 2px 10px; margin:0px 0px 4px; color:#ffffff; font-size:18px; float:left; clear:none}
+.top_anchor_wrapper{float:right; display:block; margin:0px; padding:2px 4px 2px; height:22px; width:22px; background:#82b2dd}
+.top_anchor{display:block; margin:0px; padding:0px; height:22px; width:22px; background:#82b2dd url(../images/top_arrow.gif) no-repeat 0px 0px; font-size:1px; text-indent:-9000px; line-height:0px; text-align:left}
+.top_anchor:hover{background:#82b2dd url(../images/top_arrow.gif) no-repeat 0px -22px}
+.thumb_wrapper{float:left; width:175px; height:280px; border:3px solid #FFFFFF; display:block; margin:0px 0px 8px; padding:0px 0px 4px; text-align:center} /*184px*/
+.thumb_wrapper:hover{border:3px solid #CCCCCC}
+.thumb_wrapper img{padding:0px; margin:0px; height:130px; width:175px}
+.thumb_wrapper p{padding:4px; margin:0px auto}
+.thumb_wrapper h4{font-size:16px; line-height:18px; font-weight:bold; display:block; height:36px; width:167px; color:#333333; padding:0px; margin:2px 4px 4px}
+.thumb_wrapper .high_bid, .thumb_wrapper .min_bid{width:161px; padding:4px 3px 3px; background:#ffed8f; display:block; color:#000000; font-size:13px; line-height:15px; height:16px; clear:right; margin:3px 4px; text-align:center}
+.thumb_wrapper .thumb_description{color:#333333; font-size:13px; line-height:15px; margin:4px 6px 0px; padding:0px 4px; display:block}
+.thumb_wrapper .bid_btn{display:block; height:28px; width:39px; background:url(../images/bid_btn.gif) no-repeat 0px 0px; padding:0px; float:right; clear:right; margin:2px 8px 6px 3px; font-size:1px; text-indent:-9000px; line-height:0px; text-align:left !important}
+.thumb_wrapper .bid_btn_fpo{display:block; height:28px; width:39px; padding:0px; float:right; clear:right; margin:2px 8px 6px 3px}
+.thumb_wrapper .bid_btn:hover{background:url(../images/bid_btn.gif) no-repeat 0px -28px}
+.info_btn{display:block; height:28px; width:108px; background:url(../images/info_btn.gif) no-repeat 0px 0px; padding:0px; float:left; clear:none; margin:2px 3px 6px 8px; font-size:1px; text-indent:-9000px; line-height:0px}
+.info_btn:hover{background:url(../images/info_btn.gif) no-repeat 0px -28px}
+/* List Info (pop modal) View */
+.pop_wrapper{float:left; width:430px; height:370px; display:block; margin:0px; padding:0px; text-align:center}
+.pop_wrapper .image_wrapper{padding:0px; margin:0px 5px 0px 0px; height:370px; width:225px; float:left; text-align:center; display:inline; background:#ffffff}
+.pop_wrapper img{padding:0px; margin:0px auto}
+.pop_wrapper .info_wrapper{float:left; width:200px; height:370px; display:inline; text-align:center; background:#ffffff}
+.pop_wrapper h4{font-size:18px; line-height:20px; font-weight:bold; display:block; height:36px; width:200px; color:#333333; padding:0px; margin:6px 0px 8px}
+.pop_wrapper .high_bid{width:194px; padding:3px 3px; background:#ffed8f; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.pop_wrapper .min_bid{width:194px; padding:3px 3px; background:#82b2dd; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.pop_wrapper .max_value{width:194px; padding:3px 3px; background:#95ca44; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.pop_wrapper .bid_increment{width:194px; padding:3px 3px; background:#ffed8f; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.pop_wrapper .pop_description{color:#333333; font-size:13px; line-height:15px; margin:8px 6px 6px; padding:0px; display:block; clear:both; width:188px}
+.pop_wrapper .bid_btn{display:block; height:28px; width:39px; background:url(../images/bid_btn.gif) no-repeat 0px 0px; padding:0px; float:right; clear:both; margin:10px 10px 12px 151px; font-size:1px; text-indent:-9000px; line-height:0px}
+.pop_wrapper .bid_btn:hover{background:url(../images/bid_btn.gif) no-repeat 0px -28px}
+.pop_wrapper a{color:#027932 !important}
+.pop_wrapper a:hover{color:#95ca44 !important}
+.pop_close{color:#027932 !important; margin:14px 8px 12px !important; padding:2px 0px !important; width:188px; text-align:center; display:block; float:left}
+/* lt blue = #82b2dd, ltr blue = #cadbef, blue = #3752a2, yellow = #ffed8f, green = #027932, lt green = #95ca44 */
+/* Bid View */
+.bid_wrapper{float:left; width:736px; height:200px; display:block; margin:0px 0px 10px; padding:0px; text-align:left}
+.bid_wrapper .image_wrapper{padding:0px; margin:0px 10px 0px 0px; height:130px; width:175px; float:left; text-align:center; display:inline}
+.bid_wrapper img{padding:0px; margin:0px auto}
+.bid_wrapper .info_wrapper{float:left; width:300px; height:200px; display:inline; text-align:left}
+.bid_wrapper h4{font-size:18px; line-height:20px; font-weight:bold; display:block; height:36px; width:300px; color:#333333; padding:0px; margin:6px 0px 8px}
+.bid_wrapper .high_bid{width:194px; padding:3px 3px; background:#ffed8f; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.bid_wrapper .min_bid{width:194px; padding:3px 3px; background:#82b2dd; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.bid_wrapper .max_value{width:194px; padding:3px 3px; background:#95ca44; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.bid_wrapper .bid_increment{width:194px; padding:3px 3px; background:#ffed8f; display:block; color:#000000; font-size:13px; line-height:13px; height:16px; clear:right; margin:3px 0px}
+.bid_wrapper .bid_description{color:#333333; font-size:13px; line-height:15px; margin:8px 6px 6px; padding:0px; display:block; clear:both; width:188px}
+.bid_amt_wrapper{padding:4px 8px 4px !important; background:#cadbef; float:left; clear:right; margin-top:4px !important; margin-bottom:8px !important; display:block; height:55px}
+#bid_amt.error, #bid_amt_new.error{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FCF !important; border:1px solid #F6F !important; width:190px !important}
+#bid_amt.text, #bid_amt_new.text{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FFF; border:1px solid #aeafaf; width:190px !important}
+.max_btn{margin:25px 0px 0px !important; float:left; clear:right; width:200px; padding:0px; display:block; font-size:13px !important}
+.max_btn:hover{color:#3752a2 !important}
+.dollar_sign{margin-right:2px}
+.checkbox_note{font-size:12px; color:#b4b5b5; margin:3px 20px -90px -60px !important; padding:0px; display:block; width:180px; height:80px !important; float:right; text-align:left}
+
+/* Table elements */
+table{margin:8px 0px 18px}
+tr{padding:8px}
+td{padding:8px}
+thead{background-color:#000000}
+thead tr{padding:8px !important}
+th{text-align:left; color:#FFFFFF; font-weight:bold; padding:8px}
+.gray{background-color:#CCCCCC}
+
+/* Common form elements */
+	/* Next line has print modification to omit cursor for validity */
+.UI_button{display:block; margin:0px; padding:0px 3px; height:40px; min-width:80px; font-size:16px; color:#FFF; text-decoration:none; cursor:pointer; background-color:#027932; border:2px solid #95ca44; text-transform:uppercase}
+.UI_button:hover{color:#FFF; background-color:#95ca44; border:2px solid #027932}
+.UI_red_button{display:block; margin:0px; padding:0px 3px; height:40px; min-width:80px; font-size:16px; color:#FFF; text-decoration:none; cursor:pointer; background-color:#b32851; border:2px solid #e390aa}
+.UI_red_button:hover{color:#363636; background-color:#e390aa; border:2px solid #b32851}
+.dpl_error{font-size:12px; color:#363636; font-weight:bold; line-height:13px; margin-top:0px !important; margin-bottom:2px !important; display:block}
+/* next line has IE6 hack */
+.dpl_error_wrapper{display:block; padding:10px 6px 7px 76px; margin:0px 0px 10px 6px; border:1px solid #F6F; width:400px; background:#FCF url(../images/pink_error_icon.gif) no-repeat 6px 6px; min-height:64px; clear:right; position:relative}
+.required_note{font-size:12px; text-align:right; line-height:12px; margin-bottom:5px}
+.required_symbol{color:#fd381e}
+.form_note{font-size:11px; line-height:12px; display:block; width:140px; margin-top:-70px; margin-right:0px; margin-bottom:35px; margin-left:33px; position:relative; top:-45px}
+.format{font-size:12px; color:#b4b5b5; margin:0px 0px -1px; padding:0px; line-height:1px;}
+/* Next line has two IE6 hacks, one IE7 hack */
+#send_btn{float:right; clear:right; margin:12px 5px 20px 0px; padding:0px 3px}
+#bid_form #back_btn{float:left; margin:12px 0px 20px 325px; padding:0px 3px; clear:none}
+#bid_confirm_form #back_btn{float:left; margin:12px 0px 20px 278px; padding:0px 3px; clear:none}
+#place_btn{float:right; clear:right; margin:12px 5px 20px 0px; padding:0px 3px}
+#single_btn{float:right; clear:right; margin:12px 5px 20px 0px; padding:0px 3px}
+.tooltip{ position: absolute; top: 0; left: 0; z-index: 99; display: none; width:175px; background-color:#479300; border:2px solid #8ac953; font-size:13px; line-height:15px; padding:5px 0px 0px !important; margin:0px; font-weight:normal; color:#FFFFFF; cursor:help}
+.tooltip:hover{cursor:help}
+.red {color:#CC0000 !important}
+.green {color:#009900 !important}
+input{font:12px "Trebuchet MS",Helvetica,Arial,sans-serif}
+
+/* Forms */
+#contact, #bid, #register{width:500px; margin:0px 12px; padding:0px; position:relative; display:block}
+#register_golf{width:670px; margin:0px 12px; padding:0px; position:relative; display:block}
+#contact form, #bid form, #register form, #register_golf form{border:none; margin:0px; padding:0px; position:relative; display:block}
+#contact fieldset, #bid fieldset, #register fieldset, #register_golf fieldset{border:none; margin:0px; padding:0px}
+#contact li.right, #bid li.right, #register li.right{float:left; width:220px; padding:0px 0px 10px; margin:0px 0px 0px 30px; display:inline; text-align:left; list-style:url(../images/clear_pixel.gif) none; background:url(../images/clear_pixel.gif); clear:right}
+#register_golf li.right_clear{float:left; width:220px; padding:0px 0px 10px; margin:0px 0px 0px 30px; display:inline; text-align:left; list-style:url(../images/clear_pixel.gif) none; background:url(../images/clear_pixel.gif); clear:right}
+#register_golf li.right{float:left; width:220px; padding:0px 0px 10px; margin:0px 0px 0px 30px; display:inline; text-align:left; list-style:url(../images/clear_pixel.gif) none; background:url(../images/clear_pixel.gif)}
+#register_golf li.right_right{float:left; width:160px; padding:0px 0px 10px; margin:20px 0px 0px 20px; display:inline; text-align:left; list-style:url(../images/clear_pixel.gif) none; background:url(../images/clear_pixel.gif); clear:right}
+#contact li.left, #bid li.left, #register li.left, #register_golf li.left{float:left; width:220px; padding:0px 0px 10px 0px; margin:0px; display:inline; text-align:left; list-style:url(../images/clear_pixel.gif) none; background:url(../images/clear_pixel.gif)}
+/* Next line has IE6, IE7 hack */
+#contact li.full, #bid li.full, #register li.full, #register_golf li.full{float:left; width:440px; padding:0px 0px 10px; margin:0px; display:inline; text-align:left; list-style:url(../images/clear_pixel.gif) none; background:url(../images/clear_pixel.gif); clear:right}
+#contact ul, #bid ul, #register ul, #register_golf ul{list-style:none; margin:0px; padding:0px 7px}
+#contact label, #bid label, #register label, #register_golf label{text-align:left; margin:0px; padding:0px; font-weight:normal; color:#363636; font-size:13px; line-height:15px; text-decoration:none; display:block; width:220px; clear:right}
+#register_golf li.right_right label{width:135px !important; float:left; display:inline !important; margin:5px 0px 0px 8px !important}
+#contact label.full_line, #bid label.full_line, #register label.full_line, #register_golf label.full_line{width:500px !important}
+#contact input.error, #bid input.error, #register input.error, #register_golf input.error{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FCF !important; border:1px solid #F6F !important; width:200px}
+#contact input.text, #bid input.text, #register input.text, #register_golf input.text{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FFF; border:1px solid #aeafaf; width:200px}
+#contact input.area_cd_error, #bid input.area_cd_error, #register input.area_cd_error, #register_golf input.area_cd_error{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FCF !important; border:1px solid #F6F !important; width:25px}
+#contact input.area_cd_text, #bid input.area_cd_text, #register input.area_cd_text, #register_golf input.area_cd_text{height:25px; margin:5px 2px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FFF; border:1px solid #aeafaf; width:25px}
+#contact input.phone_error, #bid input.phone_error, #register input.phone_error, #register_golf input.phone_error{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FCF !important; border:1px solid #F6F !important; width:93px}
+#contact input.phone_text, #bid input.phone_text, #register input.phone_text, #register_golf input.phone_text{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FFF; border:1px solid #aeafaf; width:93px}
+#contact input.email_error, #register input.email_error, #register_golf input.email_error{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FCF !important; border:1px solid #F6F !important; width:200px}
+#bid input.email_error{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FCF !important; border:1px solid #F6F !important; width:450px}
+#contact input.email_text, #register input.email_text, #register_golf input.email_text{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FFF; border:1px solid #aeafaf; width:200px}
+#bid input.email_text{height:25px; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; background-color:#FFF; border:1px solid #aeafaf; width:450px}
+/* Next line has IE6, IE7 hack */
+#contact .dropdown, #bid .dropdown, #register .dropdown, #register_golf .dropdown{font:12px "Trebuchet MS",Helvetica,Arial,sans-serif; height:32px; background-color:#FFF; border:1px solid #aeafaf; margin:5px 0px 0px; padding:6px 0px 6px 3px; display:inline; width:200px}
+/* Next line has IE6, IE7 hack */
+#contact .error_dropdown, #bid .error_dropdown, #register .error_dropdown, #register_golf .error_dropdown{font:12px "Trebuchet MS",Helvetica,Arial,sans-serif; height:32px; background-color:#FCF !important; border:1px solid #F6F !important; margin:5px 0px 0px; padding:6px 0px 6px 3px; display:inline; width:200px}
+#contact .textarea, #bid .textarea, #register .textarea, #register_golf .textarea{font:12px "Trebuchet MS",Helvetica,Arial,sans-serif; height:66px; background-color:#FFF; border:1px solid #aeafaf; margin:5px 0px 0px; padding:5px 5px 0px 5px; display:inline; width:450px; clear:right}
+#contact .error_textarea, #bid .error_textarea, #register .error_textarea, #register_golf .error_textarea{font:12px "Trebuchet MS",Helvetica,Arial,sans-serif; height:66px; margin:5px 0px 0px; padding:5px 5px 0px 5px; background-color:#FCF !important; border:1px solid #F6F !important; width:450px; clear:right}
+#contact .checkbox, #bid .checkbox, #register .checkbox, #register_golf .checkbox{height:15px; background-color:#FFF; border:1px solid #aeafaf; margin:5px 0px 0px; padding:0px; display:inline; width:15px}
+#register_golf .checkbox, #register_golf .error_checkbox{clear:none !important; float:left; display:inline}
+#contact .error_checkbox, #bid .error_checkbox, #register .error_checkbox, #register_golf .error_checkbox{height:15px; margin:5px 0px 0px; padding:0px; background-color:#FCF !important; border:1px solid #F6F !important; width:15px}
+#register h3, #register_golf h3{margin:6px 0px; clear:right; display:inline; float:left; width:500px}
+#team_info{display:none}
+#team_pref{display:none}
+#fname2_pref_li label, #lname2_pref_li label, #fname3_pref_li label, #lname3_pref_li label, #fname4_pref_li label, #lname4_pref_li label{white-space: nowrap; overflow: visible}
+
+/* Policy elements */
+.modal_pad{padding:15px; width:640px; text-align:left}
+.no_modal_pad{padding:-15px}
+.modal_pad h2{font:bold 26px/28px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#3752a2; text-decoration:none; padding:0px; margin:0px 0px 12px}
+.modal_pad h3{font:bold 22px/24px 'Trebuchet MS', Geneva, Arial, Helvetica, sans-serif; color:#82b2dd; text-decoration:none; padding:0px; margin:0px 0px 12px}
+.modal_pad p{}
+.modal_pad ol{}
+.modal_pad ul{}
+.modal_pad a{color:#027932}
+.modal_pad a:hover{color:#95ca44}
+
+/* Form wait animation elements */
+#simplemodal-overlay{background-color:#000}
+#simplemodal-container{height:100px; width:252px; padding:12px}
+#wait p{margin:6px 0px 0px 0px; padding:0px; text-align:center; font-size:14px; font-weight:bold; color:#000; text-decoration:none}
+#wait img{margin:0px; padding:0px}
+#wait{background:#FFF; text-align:center; padding:4px 4px 8px 4px; border:4px solid #aeafaf}
