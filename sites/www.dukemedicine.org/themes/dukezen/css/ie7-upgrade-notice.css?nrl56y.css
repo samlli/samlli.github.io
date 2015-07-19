@@ -1,0 +1,66 @@
+/* ==========================================================================
+   IE7 Upgrade Notice Styles
+   ========================================================================== */
+/* ==========================================================================
+   IE7 Upgrade Notice Styles
+   ========================================================================== */
+/* line 1225, ../sass/_styleguide.scss */
+/* line 32, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice {
+  display: none;
+  margin-top: -8px;
+  background: #ffb940;
+  height: 86px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+}
+
+/* line 1230, ../sass/_styleguide.scss */
+/* line 44, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice div {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 31px;
+  max-width: 1280px;
+}
+
+/* line 1237, ../sass/_styleguide.scss */
+/* line 52, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice i {
+  font-size: 22px;
+  font-size: 1.375rem;
+  font-weight: 400;
+}
+
+/* line 1241, ../sass/_styleguide.scss */
+/* line 58, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice i.icon-exclamation-sign {
+  padding-right: 8px;
+  color: #e6780b;
+}
+
+/* line 1245, ../sass/_styleguide.scss */
+/* line 63, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice i.icon-remove-sign {
+  float: right;
+  padding-top: 2px;
+}
+
+/* line 1248, ../sass/_styleguide.scss */
+/* line 68, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice i.icon-remove-sign:hover {
+  cursor: pointer;
+}
+
+/* line 1252, ../sass/_styleguide.scss */
+/* line 72, ../sass/ie7-upgrade-notice.scss */
+.ie7-upgrade-notice p {
+  padding-top: 24px;
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: 400;
+}

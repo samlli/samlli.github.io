@@ -1,0 +1,981 @@
+'use strict';
+
+angular.module('dukemedicine.modalSearch', ['dukemedicine']);
+
+angular.element(document).ready(function() {
+    //Fixing facebook bug with redirect
+    if (window.location.hash === '#_=_') window.location.hash = '#!';
+
+    //Then init the app
+	angular.bootstrap(angular.element(document.getElementById('desktop-header')), ['dukemedicine.modalSearch']);
+});
+
+'use strict';
+
+
+angular.module('dukemedicine.modalSearch')
+.factory('BlogSearchParams', ['SolrService', function(SolrService){
+
+    var getFilterQueries = function(){
+        return [
+/* moved to modalBlogSearch endpoint
+            'ss_type:(blog_post)',
+            'bs_status:true',
+            'index_id:solr_node_index' */
+        ];
+    };
+
+    var getQueryFields = function(){
+        return [
+/* moved to modalBlogSearch endpoint
+            'tm_title^1.0',
+            'tm_field_sub_title^1.0',
+            'tm_field_treatment_terms$name^3.0',
+            'tm_field_treatment_terms$description^1.0',
+            'tm_field_alias^1.0',
+            'tm_field_phone_number^0.1',
+            'tm_field_overview_group$field_overview_header^1.0',
+            'tm_field_overview_group$field_other_treatments_desc^1.0',
+            'tm_field_overview_group$field_other_treatments_title^1.0',
+            'tm_field_overview_group$field_treatment_treatments_title^1.0',
+            'tm_field_overview_group$field_overview_text$value^1.0',
+            'tm_field_treatment_treatments_title^1.0',
+            'tm_field_treatment_treatmnts_overvw^1.0',
+            'tm_field_treatment_treatments$field_overview_header^1.0',
+            'tm_field_treatment_treatments$field_other_treatments_desc^1.0',
+            'tm_field_treatment_treatments$field_other_treatments_title^2.0',
+            'tm_field_treatment_treatments$field_treatment_treatments_title^2.0',
+            'tm_field_treatment_treatments$field_overview_text$value^1.0',
+            'tm_field_treatment_treatments$field_treatment_test_desc$value^1.0',
+            'tm_field_treatment_treatments$field_treatment_test_link$title^1.0',
+            'tm_field_treatment_treatments$field_treatment_treatment_desc$value^1.0',
+            'tm_field_treatment_treatments$field_treatment_treatment_link$title^1.0',
+            'tm_field_treatment_tests_title^1.0',
+            'tm_field_treatment_tests_overview^0.8',
+            'tm_field_treatment_group_overview$value^1.0',
+            'text_exact' */
+        ];
+    };
+
+    var getBoostQueries = function(){
+        return [];
+    };
+
+    var getPhraseFields = function(){
+        return [
+/* moved to modalBlogSearch endpoint
+            'tm_title^3.0',
+            'tm_field_sub_title',
+            'tm_field_treatment_terms:name^3.0',
+            'tm_field_treatment_terms:description',
+            'tm_field_alias',
+            'tm_field_phone_number',
+            'tm_field_overview_group:field_overview_header',
+            'tm_field_overview_group:field_other_treatments_desc',
+            'tm_field_overview_group:field_other_treatments_title',
+            'tm_field_overview_group:field_treatment_treatments_title',
+            'tm_field_overview_group:field_overview_text:value',
+            'tm_field_treatment_treatments_title',
+            'tm_field_treatment_treatmnts_overvw',
+            'tm_field_treatment_treatments:field_overview_header',
+            'tm_field_treatment_treatments:field_other_treatments_desc',
+            'tm_field_treatment_treatments:field_other_treatments_title',
+            'tm_field_treatment_treatments:field_treatment_treatments_title',
+            'tm_field_treatment_treatments:field_overview_text:value',
+            'tm_field_treatment_treatments:field_treatment_test_desc:value',
+            'tm_field_treatment_treatments:field_treatment_test_link:title',
+            'tm_field_treatment_treatments:field_treatment_treatment_desc:value',
+            'tm_field_treatment_treatments:field_treatment_treatment_link:title',
+            'tm_field_treatment_tests_title',
+            'tm_field_treatment_tests_overview',
+            'tm_field_treatment_group_overview:value' */
+        ];
+    };
+
+    var getFacetFields = function(){
+        return {};
+    };
+
+    var getReturnFields = function(){
+        return [
+            'tm_title',
+            'tm_field_treatment_short_ovierview$value',
+            'tm_field_overview_group$field_overview_text$value'
+        ];
+    };
+
+    var getParams = function(start, rows){
+        return {
+/* moved to modalBlogSearch endpoint
+            'boost': 'max(is_field_search_boost, 1)',
+            'mm': '2<-1 4<75%',
+            'ps': 3,
+            'facet': true,
+            'facet.limit': 10,
+            'facet.mincount': 1,
+            'facet.missing': false,
+            'facet.sort': 'count',
+            'json.nl': 'map',
+            'sort': 'score desc' */
+            'start': start,
+            'rows': rows, 
+        };
+    };
+
+    var setup = function(start, rows){
+        SolrService.setFilterQueries(this.getFilterQueries());
+        SolrService.setQueryFields(this.getQueryFields());
+        SolrService.setPhraseFields(this.getPhraseFields());
+        SolrService.setFacetFields(this.getFacetFields());
+        SolrService.setReturnFields(this.getReturnFields());
+        SolrService.setParams(this.getParams(start, rows));
+    };
+
+    return {
+        getFilterQueries: getFilterQueries,
+        getQueryFields: getQueryFields,
+        getBoostQueries: getBoostQueries,
+        getPhraseFields: getPhraseFields,
+        getFacetFields: getFacetFields,
+        getReturnFields: getReturnFields,
+        getParams: getParams,
+        setup: setup
+    };
+}]);
+
+'use strict';
+
+
+angular.module('dukemedicine.modalSearch')
+.factory('OtherSearchParams', ['SolrService', function(SolrService){
+
+    var getFilterQueries = function(){
+        return [
+/* Moved to modalOtherSearch endpoint 
+            'ss_type:(-staff_member OR -physician_profile OR -hospital_location OR -treatment_location OR -super_location_page OR -treatment_detail OR -treatment_group OR -patient_story OR -campaign OR -events)',
+            'bs_status:true',
+            'index_id:solr_node_index' */
+        ];
+    };
+
+    var getQueryFields = function(){
+        return [
+/* Moved to modalOtherSearch endpoint 
+            'tm_title^1.0',
+            'tm_field_event_organizer^0.2',
+            'tm_field_event_subjects^0.3',
+            'tm_field_phone_number^0.1',
+            'tm_field_sub_title^1.0',
+            'tm_field_alias^1.0',
+            'tm_field_treatment_tests_overview^0.8',
+            'tm_field_treatment_tests_title^1.0',
+            'tm_field_treatment_treatments_title^1.0',
+            'tm_field_treatment_treatmnts_overvw^1.0',
+            'tm_field_clin_triial_detail_reqs^0.1',
+            'tm_field_office_phone^0.1',
+            'tm_field_physician_overview^1.0',
+            'tm_field_physician_suffix^0.1',
+            'tm_field_physician_board_certs^0.3',
+            'tm_field_physician_recognitions^0.2',
+            'tm_field_legacy_service_terms^1.0',
+            'tm_field_custom_terms^1.0',
+            'tm_field_news_overview^1.0',
+            'tm_field_patient_story_name^0.8',
+            'tm_field_parking^0.1',
+            'tm_field_insurance_copy^1.0',
+            'tm_search_api_aggregation_1^1.0',
+            'tm_search_api_aggregation_3^3.0',
+            'tm_body$value^0.1',
+            'tm_body$summary^0.1',
+            'tm_field_event_address$street^0.5',
+            'tm_field_event_address$additional^1.0',
+            'tm_field_event_address$city^1.0',
+            'tm_field_event_address$province^1.0',
+            'tm_field_event_address$postal_code^1.0',
+            'tm_field_event_address$country^1.0',
+            'tm_field_event_address$province_name^1.0',
+            'tm_field_event_address$country_name^1.0',
+            'tm_field_event_speakers$value^0.3',
+            'tm_field_treatment_terms$name^3.0',
+            'tm_field_treatment_terms$description^1.0',
+            'tm_field_overview_group$field_overview_header^1.0',
+            'tm_field_overview_group$field_other_treatments_desc^1.0',
+            'tm_field_overview_group$field_other_treatments_title^1.0',
+            'tm_field_overview_group$field_treatment_treatments_title^1.0',
+            'tm_field_appointments_questions$field_overview_header^1.0',
+            'tm_field_appointments_questions$field_other_treatments_desc^1.0',
+            'tm_field_appointments_questions$field_other_treatments_title^1.0',
+            'tm_field_appointments_questions$field_treatment_treatments_title^1.0',
+            'tm_field_billing_questions$field_overview_header^1.0',
+            'tm_field_billing_questions$field_other_treatments_desc^1.0',
+            'tm_field_billing_questions$field_other_treatments_title^1.0',
+            'tm_field_billing_questions$field_treatment_treatments_title^1.0',
+            'tm_field_website_questions$field_overview_header^1.0',
+            'tm_field_website_questions$field_other_treatments_desc^1.0',
+            'tm_field_website_questions$field_other_treatments_title^1.0',
+            'tm_field_website_questions$field_treatment_treatments_title^1.0',
+            'tm_field_tags$name^1.0',
+            'tm_field_tags$description^1.0',
+            'tm_field_treatment_treatments$field_overview_header^1.0',
+            'tm_field_treatment_treatments$field_other_treatments_desc^1.0',
+            'tm_field_treatment_treatments$field_other_treatments_title^2.0',
+            'tm_field_treatment_treatments$field_treatment_treatments_title^2.0',
+            'tm_field_location_address$name^1.0',
+            'tm_field_location_address$street^0.5',
+            'tm_field_location_address$additional^1.0',
+            'tm_field_location_address$city^1.0',
+            'tm_field_location_address$province^1.0',
+            'tm_field_location_address$postal_code^1.0',
+            'tm_field_location_address$country^1.0',
+            'tm_field_location_address$province_name^1.0',
+            'tm_field_location_address$country_name^1.0',
+            'tm_field_location_type$name^1.0',
+            'tm_field_location_type$description^1.0',
+            'tm_field_treatment_location_ovrview$value^1.0',
+            'tm_field_treatment_group_overview$value^1.0',
+            'tm_field_overview_group$field_overview_text$value^1.0',
+            'tm_field_reference_locations$field_location_address$street^0.5',
+            'tm_field_reference_locations$field_location_address$city^1.0',
+            'tm_field_treatment_treatments$field_overview_text$value^1.0',
+            'tm_field_treatment_treatments$field_treatment_test_desc$value^1.0',
+            'tm_field_treatment_treatments$field_treatment_test_link$title^1.0',
+            'tm_field_treatment_treatments$field_treatment_treatment_desc$value^1.0',
+            'tm_field_treatment_treatments$field_treatment_treatment_link$title^1.0',
+            'ss_field_physician_last_name^0.5',
+            'ss_field_physician_first_name^0.5',
+            'tm_field_specialties^2.0',
+            'ss_field_initials',
+            'tm_field_languages_spoken^3.0',
+            'text_exact',
+            'specialty_exact',
+            'locations_title',
+            'location_type_name^1.0',
+            'treatment_term_name^3.0',
+            'tm_title^13.0',
+            'tm_field_languages_spoken^3.0' */
+        ];
+    };
+
+    var getBoostQueries = function(){
+        return [];
+    };
+
+    var getPhraseFields = function(){
+        return [
+/* Moved to ModalOtherSearch Endpoint
+            'text_exact',
+            'specialty_exact^4.0',
+            'tm_field_phone_number',
+            'tm_title^3.0',
+            'tm_field_sub_title',
+            'tm_field_event_organizer',
+            'tm_field_event_subjects',
+            'tm_field_alias',
+            'tm_field_treatment_tests_overview',
+            'tm_field_treatment_tests_title',
+            'tm_field_treatment_treatments_title',
+            'tm_field_treatment_treatmnts_overvw',
+            'tm_field_clin_triial_detail_reqs',
+            'tm_field_physician_overview',
+            'tm_field_physician_suffix',
+            'tm_field_physician_board_certs',
+            'tm_field_physician_recognitions',
+            'tm_field_legacy_service_terms',
+            'tm_field_news_overview',
+            'tm_field_patient_story_name',
+            'tm_field_office_phone',
+            'tm_field_parking',
+            'tm_search_api_aggregation_1',
+            'tm_search_api_aggregation_3',
+            'tm_field_tags:name',
+            'tm_field_tags:description',
+            'tm_field_overview_group:field_overview_header',
+            'tm_field_overview_group:field_other_treatments_desc',
+            'tm_field_overview_group:field_other_treatments_title',
+            'tm_field_overview_group:field_treatment_treatments_title',
+            'tm_field_treatment_terms:name^3.0',
+            'tm_field_treatment_terms:description',
+            'tm_field_event_address:street',
+            'tm_field_event_address:additional',
+            'tm_field_event_address:city',
+            'tm_field_event_address:province',
+            'tm_field_event_address:postal_code',
+            'tm_field_event_address:country',
+            'tm_field_event_address:province_name',
+            'tm_field_event_address:country_name',
+            'tm_field_event_speakers:value',
+            'tm_field_appointments_questions:field_overview_header',
+            'tm_field_appointments_questions:field_other_treatments_desc',
+            'tm_field_appointments_questions:field_other_treatments_title',
+            'tm_field_appointments_questions:field_treatment_treatments_title',
+            'tm_field_billing_questions:field_overview_header',
+            'tm_field_billing_questions:field_other_treatments_desc',
+            'tm_field_billing_questions:field_other_treatments_title',
+            'tm_field_billing_questions:field_treatment_treatments_title',
+            'tm_field_website_questions:field_overview_header',
+            'tm_field_website_questions:field_other_treatments_desc',
+            'tm_field_website_questions:field_other_treatments_title',
+            'tm_field_website_questions:field_treatment_treatments_title',
+            'tm_field_treatment_treatments:field_overview_header',
+            'tm_field_treatment_treatments:field_other_treatments_desc',
+            'tm_field_treatment_treatments:field_other_treatments_title',
+            'tm_field_treatment_treatments:field_treatment_treatments_title',
+            'tm_field_location_address:name',
+            'tm_field_location_address:street',
+            'tm_field_location_address:additional',
+            'tm_field_location_address:city',
+            'tm_field_location_address:province',
+            'tm_field_location_address:postal_code',
+            'tm_field_location_address:country',
+            'tm_field_location_address:province_name',
+            'tm_field_location_address:country_name',
+            'tm_field_location_type:name',
+            'tm_field_location_type:description',
+            'tm_field_treatment_location_ovrview:value',
+            'tm_field_treatment_group_overview:value',
+            'tm_field_overview_group:field_overview_text:value',
+            'tm_field_reference_locations:field_location_address:street',
+            'tm_field_reference_locations:field_location_address:city',
+            'tm_field_treatment_treatments:field_overview_text:value',
+            'tm_field_treatment_treatments:field_treatment_test_desc:value',
+            'tm_field_treatment_treatments:field_treatment_test_link:title',
+            'tm_field_treatment_treatments:field_treatment_treatment_desc:value',
+            'tm_field_treatment_treatments:field_treatment_treatment_link:title',
+            'location_type_name',
+            'tm_field_location_type$description',
+            'treatment_term_name',
+            'tm_field_treatment_terms$description',
+            'tm_field_location_address$name',
+            'tm_field_location_address$street',
+            'tm_field_location_address$additional',
+            'tm_field_location_address$city',
+            'tm_field_location_address$province',
+            'tm_field_location_address$postal_code',
+            'tm_field_location_address$country',
+            'tm_field_location_address$province_name',
+            'tm_field_location_address$country_name',
+            'tm_field_treatment_location_ovrview$value',
+            'tm_field_overview_group$field_overview_header',
+            'tm_field_overview_group$field_other_treatments_desc',
+            'tm_field_overview_group$field_other_treatments_title',
+            'tm_field_overview_group$field_treatment_treatments_title',
+            'tm_field_overview_group$field_overview_text:value',
+            'tm_field_treatment_group_overview:value' */
+        ];
+    };
+
+    var getFacetFields = function(){
+        return {};
+    };
+
+    var getReturnFields = function(){
+        return [];
+    };
+
+    var getParams = function(start, rows){
+        return {
+/* Moved to ModalOtherSearch Endpoint
+            'boost': 'max(is_field_search_boost, 1)',
+            'mm': '2<-1 4<75%',
+            'ps': 3,
+            'facet': true,
+            'facet.limit': 10,
+            'facet.mincount': 1,
+            'facet.missing': false,
+            'facet.sort': 'count',
+            'json.nl': 'map',
+            'sort': 'score desc' */
+            'start': start,
+            'rows': rows,
+            'endpoint': '/modalOtherSearch'
+        };
+    };
+
+    var setup = function(start, rows){
+        SolrService.clearAll();
+        SolrService.setFilterQueries(this.getFilterQueries());
+        SolrService.setQueryFields(this.getQueryFields());
+        SolrService.setPhraseFields(this.getPhraseFields());
+        SolrService.setParams(this.getParams(start, rows));
+    };
+
+    return {
+        getFilterQueries: getFilterQueries,
+        getQueryFields: getQueryFields,
+        getBoostQueries: getBoostQueries,
+        getPhraseFields: getPhraseFields,
+        getFacetFields: getFacetFields,
+        getReturnFields: getReturnFields,
+        getParams: getParams,
+        setup: setup
+    };
+}]);
+
+'use strict';
+
+angular.module('dukemedicine.modalSearch').controller('ModalHeaderCtrl', ['$scope', '$timeout',
+	function($scope, $timeout){
+		var rootPath = '/sites/www.dukemedicine.org/themes/dukezen/js/source/angular/modal-search/views/';
+		$scope.menu = '';
+		$scope.activeMenu = '';
+		$scope.alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+			'N','O','P','Q','R','S','T','U','V','W','X', 'Y','Z'];
+
+		$scope.menuTree = !!window.menu ?  window.menu : {};
+		$scope.isReady = false;
+
+		var _setMenuInfo = function(menuName) {
+			switch (menuName) {
+				case 'doctors':
+					$timeout(function() {
+						$scope.menuTitle = 'Doctors';
+						$scope.menuIcon = 'icon-user-md doctor-blue';
+					}, 500);
+					break;
+				case 'treatments':
+					$timeout(function() {
+						$scope.menuTitle = 'Treatments';
+						$scope.menuIcon = 'icon-plus-sign-alt treatment-yellow';
+					}, 500);
+					break;
+				case 'locations':
+					$timeout(function() {
+						$scope.menuTitle = 'Locations';
+						$scope.menuIcon = 'icon-map-marker location-red';
+					}, 500);
+					break;
+				case 'patients-and-visitors':
+					$timeout(function() {
+						$scope.menuTitle = 'Patients & Visitors';
+						$scope.menuIcon = 'icon-group group-grey';
+					}, 500);
+					break;
+				case 'search':
+					$timeout(function() {
+						$scope.menuTitle = 'Search Duke Medicine';
+						$scope.menuIcon = 'search';
+					}, 500);
+					break;
+				default:
+
+			}
+		};
+
+		var _hideMenu = function() {
+			$scope.activeMenu = '';
+		};
+
+		var _showMenu = function(menuName) {
+			$scope.menu = rootPath + menuName + '.html';
+
+			_setMenuInfo(menuName);
+
+			$timeout(function(){
+				$scope.activeMenu = menuName;
+			}, 150);
+		};
+
+        $scope.isOnSameNgApp = function($event) {
+            var targetArray = $event.target.getAttribute('data-ng-href').split('/');
+            var pathArray = window.location.pathname.split('/');
+
+            return targetArray.length > 0 && pathArray.length > 0 && targetArray[1] === pathArray[1];
+        };
+
+		$scope.closeModal = function($event) {
+			if ($event) {
+        window.location.href = $event.target.href;
+			} else {
+				_hideMenu();
+			}
+
+		};
+
+		$scope.isActiveMenu = function(menu) {
+			return menu === $scope.activeMenu;
+		};
+
+		$scope.hasActiveMenu = function() {
+			return $scope.activeMenu !== '';
+		};
+
+		$scope.isActive = function(name){
+			return name === $scope.activeMenu;
+		};
+
+		$scope.toggleMenu = function(newMenu) {
+			if(newMenu !== undefined && newMenu !== '' && newMenu === $scope.activeMenu){
+				_hideMenu();
+			} else if(newMenu !== undefined && newMenu === ''){
+				_hideMenu();
+			} else {
+				_showMenu(newMenu);
+
+			}
+
+		};
+
+		angular.element(document).ready(function () {
+	        $scope.isReady = true;
+	    });
+	}
+]);
+
+'use strict';
+
+angular.module('dukemedicine.modalSearch').directive('ngIsScrollable', function () {
+
+	function updateHeight(scope) {
+		// Hard coded until the new view state can be implemented
+		var newHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - parseInt(angular.element('#header').css('height')) - 263;
+		angular.element('#instant-results').css('max-height', newHeight + 'px');
+		scope.isScrollable();
+	}
+
+	return {
+		restrict: 'A',
+		priority: -1,
+		template:
+			'<div class="scroll-here" data-ng-show="canScroll && query !== \'\'">'+
+				'<div class="arrow"><i class="icon-double-angle-down"></i></div>'+
+				'<h6>Scroll to see more results</h6>'+
+			'</div>',
+		scope: {
+			query: '@solrQuery'
+		},
+		controller: function($scope, $timeout) {
+			$scope.canScroll = false;
+
+			$scope.isScrollable = function() {
+				if(!!$scope.query) {
+					$timeout(function() {
+						var children = angular.element('#instant-results').children(),
+						listHeight = angular.element('#instant-results').css('max-height');
+						for(var i = children.length; i > 0; i--){
+							if(angular.element(children[i-1]).css('height') > listHeight){
+								$scope.canScroll = true;
+								break;
+							} else if(i === 1) {
+								$scope.canScroll = false;
+							}
+						}
+					}, 400);
+				} else {
+					$scope.canScroll = false;
+				}
+
+			};
+
+			$scope.$watch('query', function(newValue, oldValue){
+				if(oldValue !== undefined && newValue !== oldValue){
+					$scope.isScrollable();
+				}
+			});
+
+		},
+		link: function(scope) {
+
+			angular.element(document).ready(function(){
+				updateHeight(scope);
+			});
+
+			window.onresize = updateHeight;
+		}
+	};
+});
+
+'use strict';
+
+angular.module('dukemedicine.modalSearch').directive('ngModalQuickLinks', function () {
+
+	function getMenu(scope, name) {
+		if(!!window.menu && !!window.menu[name]){
+			var menu = window.menu[name];
+			scope.rightLinks = [];
+			scope.leftLinks = [];
+			for (var item in menu) {
+				if(item.indexOf('Quick') !== -1 || item.indexOf('quick') !== -1){
+					scope.rightHeader = item;
+				} else {
+					scope.leftHeader = item;
+				}
+				for (var links in menu[item]) {
+					if(item.indexOf('Quick') !== -1 || item.indexOf('quick') !== -1){
+						scope.rightLinks.push(menu[item][links]);
+					} else{
+						scope.leftLinks.push(menu[item][links]);
+					}
+				}
+			}
+		}
+	}
+
+	return {
+		restrict: 'A',
+		template:
+			'<div class="quick-links-section">'+
+				'<div class="quick-links-left">'+
+					'<p class="white">{{leftHeader}}</p>'+
+					'<ul>'+
+						'<li data-ng-repeat="link in leftLinks">'+
+							'<a class="white" data-ng-click="closeModal($event)" data-ng-href="{{link[1]}}" target="{{getLinkTarget(link[1])}}">{{link[0]}}</a>'+
+						'</li>'+
+					'</ul>'+
+				'</div>'+
+				'<div class="quick-links-right">'+
+					'<p class="white">{{rightHeader}}</p>'+
+					'<ul>'+
+						'<li data-ng-repeat="rlink in rightLinks">'+
+							'<a class="white" data-ng-click="closeModal($event)" data-ng-href="{{rlink[1]}}" data-ng-attr-target="{{getLinkTarget(rlink[1])}}">{{rlink[0]}}</a>'+
+						'</li>'+
+					'</ul>'+
+				'</div>'+
+			'</div>',
+		scope: {},
+		controller: function($scope) {
+			$scope.$watch('searchQuery', function(newValue){
+				if(newValue === ''){
+					$scope.activeQuery = true;
+				} else{
+					$scope.activeQuery = false;
+				}
+			});
+			$scope.getLinkTarget = function(link) {
+				if (link.indexOf('search-results/#!') !== -1) {
+					return '_self';
+				}
+				else if (link.indexOf('http') !== -1) {
+ 					return '_blank';
+				} else {
+					return '_self';
+ 				}
+
+		  };
+
+            $scope.isOnSameNgApp = function($event) {
+                var targetArray = $event.target.getAttribute('data-ng-href').split('/');
+                var pathArray = window.location.pathname.split('/');
+
+                return targetArray.length > 0 && pathArray.length > 0 && targetArray[1] === pathArray[1] ||
+                    targetArray[1] === (window.location.protocol + '//' + window.location.host + pathArray[1]);
+            };
+
+			$scope.closeModal = function($event) {
+                if ($event) {
+                    window.location.href = $event.target.href;
+                }
+			};
+
+		},
+		link: function(scope, element, attrs) {
+			if(!!attrs.name){
+				getMenu(scope, attrs.name);
+			}
+		}
+	};
+});
+
+'use strict';
+
+angular.module('dukemedicine.modalSearch')
+.directive('ngDoctorSmallThumbnail', function () {
+  return {
+    restrict: 'A',
+    require: '^doctor',
+    scope: {
+      'doctor' : '='
+    },
+    template: '<span data-ng-class="{stockThumbnail : !hasImage}"></span><img data-ng-src="{{doctorUrl}}" alt="" />',
+    controller: function($scope, FileService) {
+        if($scope.doctor.is_field_physician_photo$file !== undefined) {
+            FileService
+            .getFile($scope.doctor.is_field_physician_photo$file)
+            .then(function(data) {
+                if(data.error === undefined) {
+                    $scope.doctorUrl = data.image_url ? data.image_url : '';
+                } else {
+                    console.log(data.error);
+                }
+            }, function(errorData) {
+                console.log(errorData.error);
+            });
+        } else{
+          $scope.doctorUrl = '/sites/www.dukemedicine.org/themes/dukezen/images/default_physician_photo.png';
+        }
+    }
+  };
+});
+'use strict';
+
+angular.module('dukemedicine.modalSearch').directive('ngSuggestResult', function () {
+    return {
+        restrict: 'A',
+        template:
+			'<form data-ng-submit="submitQuery()" class="input-prepend">' +
+				'<input class="ajax-search-box" type="text" placeholder="{{placeholderText}}" data-ng-model="query" data-auto-focus>' +
+				'<button type="submit" class="add-on"><i class="icon-search"></i></button>' +
+			'</form>'+
+			'<div id="instant-results" data-ng-show="query !== \'\'">'+
+				'<div class="left-result-section">'+
+					'<div class="treatments slide-in" data-ng-show="showResults(treatments)">'+
+						'<h4>'+
+							'<i class="icon-plus-sign-alt"></i>Treatments'+
+							'<a class="see-all-modal" data-ng-click="closeModal($event)" data-ng-href="/search-results/treatments?s={{query}}">See all<i class="icon-circle-arrow-right"></i></a>'+
+						'</h4>'+
+						'<ul>'+
+							'<li data-ng-repeat="result in treatments track by $index" data-ng-class="{last: $last}">'+
+								'<a class="result-title" data-ng-href="{{result.ss_url | encodeResultUrl}}"></a>'+
+								'<span class="result-title">{{result.tm_title[0]}}</span>'+
+							'</li>'+
+						'</ul>'+
+					'</div>'+
+					'<div class="doctors slide-in" data-ng-show="showResults(doctors)">'+
+						'<h4>'+
+							'<i class="icon-user-md"></i>Doctors'+
+							'<a class="see-all-modal" data-ng-click="closeModal($event)" data-ng-href="/search-results/doctors?s={{query}}">See all<i class="icon-circle-arrow-right"></i></a>'+
+						'</h4>'+
+						'<ul>'+
+							'<li data-ng-repeat="result in doctors" data-ng-class="{last: $last}">'+
+								'<a class="result-title" data-ng-click="closeModal($event)" data-ng-href="{{result.ss_url | encodeResultUrl}}"></a>'+
+								'<div data-ng-doctor-small-thumbnail class="doctor-photo-holder" data-doctor="result"></div>'+
+								'<div class="doctor-info">'+
+									'<span class="result-title">{{result.tm_title[0]}}</span>'+
+									'<div class="specialties">'+
+										'<span data-ng-if="hasSpecialties(result)" data-ng-repeat="specialty in result.sm_field_specialties">{{specialty}}{{$last ? \'\' : \', \'}}</span>'+
+									'</div>'+
+								'</div>'+
+							'</li>'+
+						'</ul>'+
+					'</div>'+
+                    '<div class="clinical-trials slide-in" data-ng-show="showResults(clinicalTrials)">'+
+                        '<h4>'+
+                            '<i class="icon-beaker"></i>Clinical trials'+
+                            '<a class="see-all-modal" data-ng-click="closeModal($event)" data-ng-href="/search-results/clinical-trials?s={{query}}">See all<i class="icon-circle-arrow-right"></i></a>'+
+                        '</h4>'+
+                        '<ul>'+
+                            '<li data-ng-repeat="result in clinicalTrials track by $index" data-ng-class="{last: $last}">'+
+                                '<a class="result-title" data-ng-href="{{result.ss_url | encodeResultUrl}}"></a>'+
+                                '<span class="result-title">{{result.tm_title[0]}}</span>'+
+                            '</li>'+
+                        '</ul>'+
+                    '</div>'+
+				'</div>'+
+				'<div class="right-result-section">'+
+					'<div class="locations slide-in" data-ng-show="showResults(locations)">'+
+						'<h4>'+
+							'<i class="icon-map-marker"></i>Locations'+
+							'<a class="see-all-modal" data-ng-click="closeModal($event)" data-ng-href="/search-results/locations?s={{query}}">See all<i class="icon-circle-arrow-right"></i></a>'+
+						'</h4>'+
+						'<ul>'+
+							'<li data-ng-repeat="result in locations track by $index" data-ng-class="{last: $last}">'+
+								'<a class="result-title" data-ng-href="{{result.ss_url | encodeResultUrl}}"></a>'+
+								'<span class="result-title">{{result.tm_title[0]}}</span>'+
+								'<span class="location">{{result.tm_field_location_address$city[0]}}, {{result.tm_field_location_address$province[0]}}</span>'+
+							'</li>'+
+						'</ul>'+
+					'</div>'+
+					'<div class="event slide-in" data-ng-show="showResults(events)" >'+
+						'<h4>'+
+							'<i class="icon-calendar"></i>Events'+
+							'<a class="see-all-modal" data-ng-click="closeModal($event)" data-ng-href="/search-results/events?s={{query}}">See all<i class="icon-circle-arrow-right"></i></a>'+
+						'</h4>'+
+						'<ul>'+
+							'<li data-ng-repeat="result in events track by $index" data-ng-class="{last: $last}">'+
+								'<a class="result-title" data-ng-href="{{result.ss_url | encodeResultUrl}}"></a>'+
+								'<span class="result-title">{{result.tm_title[0]}}</span>'+
+								'<span class="date">{{getDate(result)}}</span>'+
+							'</li>'+
+						'</ul>'+
+					'</div>'+
+					'<div class="other slide-in" data-ng-show="showResults(other)">'+
+						'<h4>'+
+							'<i class="icon-group"></i>General'+
+							'<a class="see-all-modal" data-ng-click="closeModal($event)" data-ng-href="/search-results/all?s={{query}}">See all<i class="icon-circle-arrow-right"></i></a>'+
+						'</h4>'+
+						'<ul>'+
+							'<li data-ng-repeat="result in other track by $index" data-ng-class="{last: $last}">'+
+								'<a class="result-title" data-ng-click="closeModal($event)" data-ng-href="{{result.ss_url | encodeResultUrl}}"></a>'+
+								'<span class="result-title">{{result.tm_title[0]}}</span>'+
+							'</li>'+
+						'</ul>'+
+					'</div>'+
+				'</div>'+
+			'</div>'+
+            '<div data-solr-query="{{scrollable}}" data-ng-is-scrollable></div>',
+        scope: {
+            searchType: '='
+        },
+        controller: function($scope, $location, $rootScope, Debounce, $moment, $timeout, $window, SolrService, QueryService, TreatmentSearchParams, DoctorSearchParams, LocationSearchParams, EventsSearchParams, OtherSearchParams, ClinicalTrialsSearchParams) {
+            $scope.location = $location;
+            $scope.query = '';
+            $scope.solr = SolrService;
+            $scope.moment = $moment;
+            $scope.scrollable = '';
+
+			$scope.debounce = Debounce;
+
+            $scope.treatments = {};
+            $scope.doctors = {};
+            $scope.locations = {};
+            $scope.events = {};
+            $scope.other = {};
+
+            $scope.treatmentSearch = TreatmentSearchParams;
+            $scope.doctorSearch = DoctorSearchParams;
+            $scope.locationSearch = LocationSearchParams;
+            $scope.eventSearch = EventsSearchParams;
+            $scope.otherSearch = OtherSearchParams;
+            $scope.clinicalTrialsSearch = ClinicalTrialsSearchParams;
+
+			$scope.showResults = function(resultType) {
+				if(!!$scope.query && resultType !== undefined && resultType.length > 0) {
+					return true;
+				}
+				return false;
+			};
+
+            $scope.submitQuery = function() {
+                var query = '';
+                if ($scope.query !== undefined){
+                    query = $scope.query;
+                }
+
+                window.location = encodeURI($scope.url + query);
+
+				// If a modal menu i.e. main menu lightbox is open,
+				// ensure it closes.
+				if(!!$scope.$parent.closeModal){
+					$scope.$parent.closeModal();
+				}
+            };
+
+            $scope.hasSpecialties = function(result) {
+                if(result.sm_field_specialties !== undefined &&
+                    result.sm_field_specialties.length > 0){
+                    return true;
+                }
+                return false;
+            };
+
+            $scope.getDate = function(result) {
+                if(result.ds_field_event_date_time$value !== undefined){
+                    var date = $scope.moment(result.ds_field_event_date_time$value);
+                    return date.format('MMMM DD, YYYY');
+                }
+            };
+
+            $scope.$watch('query', function(newValue, oldValue){
+				$scope.query = newValue;
+                if(oldValue !== undefined && newValue !== oldValue){
+					$scope.makeQueryDebounce(newValue);
+                }
+            });
+
+			$scope.debouncedQuery = function(newValue) {
+				if(newValue === ''){
+					$scope.treatments = [];
+					$scope.scrollable = '';
+				} else{
+					$scope.solr.groupQuery({
+						treatments: [$scope.query, $scope.treatmentSearch.getFilterQueries(), $scope.treatmentSearch.getPhraseFields(), $scope.treatmentSearch.getQueryFields(), $scope.treatmentSearch.getBoostQueries(), $scope.treatmentSearch.getParams(0,3), ['tm_title', 'ss_url']],
+						doctors: [$scope.query, $scope.doctorSearch.getFilterQueries(), $scope.doctorSearch.getPhraseFields(), $scope.doctorSearch.getQueryFields(), $scope.doctorSearch.getBoostQueries(), $scope.doctorSearch.getParams(0,0,3), $scope.doctorSearch.getReturnFields()],
+                        clinicalTrials: [$scope.query, $scope.clinicalTrialsSearch.getFilterQueries(), $scope.clinicalTrialsSearch.getPhraseFields(), $scope.clinicalTrialsSearch.getQueryFields(), $scope.clinicalTrialsSearch.getBoostQueries(), $scope.clinicalTrialsSearch.getParams(0,3), ['tm_title', 'ss_url']],
+						locations: [$scope.query, $scope.locationSearch.getFilterQueries(), $scope.locationSearch.getPhraseFields(), $scope.locationSearch.getQueryFields(), $scope.locationSearch.getBoostQueries(), $scope.locationSearch.getParams(0,0,2), ['tm_title', 'ss_url', 'tm_field_location_address$city', 'tm_field_location_address$province']],
+						events: [$scope.query, $scope.eventSearch.getFilterQueries(), $scope.eventSearch.getPhraseFields(), $scope.eventSearch.getQueryFields(), $scope.eventSearch.getBoostQueries(), $scope.eventSearch.getParams(0,2), $scope.eventSearch.getReturnFields()],
+						other: [$scope.query, $scope.otherSearch.getFilterQueries(), $scope.otherSearch.getPhraseFields(), $scope.otherSearch.getQueryFields(), $scope.otherSearch.getBoostQueries(), $scope.otherSearch.getParams(0,2), ['tm_title', 'ss_url']]
+					}).then(function(data){
+						try{
+							$scope.treatments = JSON.parse(data.treatments).response.docs;
+						} catch(e){
+							console.log(e);
+						}
+
+						try{
+							$scope.doctors = JSON.parse(data.doctors).response.docs;
+						} catch(e){
+							console.log(e);
+						}
+
+                        try{
+                            $scope.clinicalTrials = JSON.parse(data.clinicalTrials).response.docs;
+                        } catch(e){
+                            console.log(e);
+                        }
+
+						try{
+							$scope.locations = JSON.parse(data.locations).response.docs;
+						} catch(e){
+							console.log(e);
+						}
+
+						try{
+							$scope.events = JSON.parse(data.events).response.docs;
+						} catch(e){
+							console.log(e);
+						}
+
+						try{
+							$scope.other = JSON.parse(data.other).response.docs;
+						} catch(e){
+							console.log(e);
+						}
+
+						$scope.scrollable = $scope.query;
+					});
+
+				}
+
+			};
+
+            // $scope.setEvents = function(results) {
+            //     $scope.events = [];
+            //     var groups = results.grouped['rint(div(ms(ds_field_event_date_time$value),mul(24,mul(60,mul(60,1000)))))'].groups;
+            //     for (var i = 0; i < groups.length; i++) {
+            //         var items = groups[i].doclist.docs;
+            //         for (var j = 0; j < items.length; j++) {
+            //             var event = items[j];
+            //             $scope.events.push(event);
+            //         }
+            //     }
+            // };
+
+			$scope.makeQueryDebounce = $scope.debounce($scope.debouncedQuery, 425, false);
+
+            $scope.isOnSameNgApp = function($event) {
+                var targetArray = $event.target.getAttribute('data-ng-href').split('/');
+                var pathArray = window.location.pathname.split('/');
+
+                return targetArray.length > 0 && pathArray.length > 0 && targetArray[1] === pathArray[1];
+            };
+
+            // This function needs to called from data-ng-click on an achor tag
+            // if the user is angular page of same type that they select in the results.
+            // example: If the user is on a doctor profile page and they select
+            // another doctor profile page in the list of suggestions.
+			$scope.closeModal = function($event) {
+				if ($event) {
+                    window.location.href = $event.target.href;
+				} else {
+					angular.element('#overlay').trigger('click');
+				}
+			};
+        },
+        link: function(scope, element, attrs) {
+            if (attrs.url !== undefined) {
+                scope.url = attrs.url;
+            }
+
+            if (attrs.ignorePath !== undefined) {
+                scope.ignorePath = attrs.ignorePath;
+            }
+
+            if (attrs.placeholderText !== undefined) {
+                scope.placeholderText = attrs.placeholderText;
+            }
+
+            element.bind('submit', function() {
+                element.find('input').blur();
+            });
+        }
+    };
+});
