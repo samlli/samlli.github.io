@@ -123,20 +123,20 @@
 		<a class="main-menu-link main-menu-doctors" data-ng-class="{active: isActive('doctors')}" data-ng-click="toggleMenu('doctors')"><span>Donate to CASTLE</span></a>
 		<a class="main-menu-link main-menu-treatments" data-ng-class="{active: isActive('treatments')}" data-ng-click="toggleMenu('treatments')"><span>About CASTLE</span></a>
 		<a class="main-menu-link main-menu-locations" data-ng-class="{active: isActive('locations')}" data-ng-click="toggleMenu('locations')"><span>Contact Us</span></a>
-		<a class="main-menu-link main-menu-pandv" data-ng-class="{active: isActive('patients-and-visitors')}" data-ng-click="toggleMenu('patients-and-visitors')"><span>HEADER4</span></a>
-		<a class="main-menu-link main-menu-mychart" href="https://www.dukemychart.org/home/" >HEADER5</a>
-		<a class="main-menu-link main-menu-search" data-ng-class="{active: isActive('search')}" data-ng-click="toggleMenu('search')"><i class="icon-search"></i></a>
+		<a class="main-menu-link main-menu-pandv" data-ng-class="{active: isActive('patients-and-visitors')}" data-ng-click="toggleMenu('patients-and-visitors')"><span>Our Stories</span></a>
+		<!--<a class="main-menu-link main-menu-mychart" href="https://www.dukemychart.org/home/" >HEADER5</a>
+		<a class="main-menu-link main-menu-search" data-ng-class="{active: isActive('search')}" data-ng-click="toggleMenu('search')"><i class="icon-search"></i></a>-->
 	</div>
 
-	<div id="overlay" class="fade-in-out" data-ng-click="toggleMenu('')" data-ng-class="{ready: isReady}" data-ng-hide="!hasActiveMenu()"></div>
+	<!--<div id="overlay" class="fade-in-out" data-ng-click="toggleMenu('')" data-ng-class="{ready: isReady}" data-ng-hide="!hasActiveMenu()"></div>-->
 
   <!-- window.menu is defined in the header of html.tpl   -->
 	<!-- Modal Lightbox -->
-	<div class="modal-menu-overlay-container" data-ng-class="{hasMenu: hasActiveMenu(), search: activeMenu == 'search'}" data-ng-hide="!hasActiveMenu()">
-		<div class="modal-menu-overlay" data-ng-class="activeMenu" data-ng-switch on="activeMenu">
+	<!--<div class="modal-menu-overlay-container" data-ng-class="{hasMenu: hasActiveMenu(), search: activeMenu == 'search'}" data-ng-hide="!hasActiveMenu()">
+		<div class="modal-menu-overlay" data-ng-class="activeMenu" data-ng-switch on="activeMenu">-->
 
 			<!-- Doctor Modal -->
-			<div ng-switch-when="doctors" class="fade-include modal-menu-item">
+			<!--<div ng-switch-when="doctors" class="fade-include modal-menu-item">
 				<i id="close-overlay" data-ng-click="toggleMenu('')" class="icon-remove"></i>
 				<div class="nav-modal-header"><i data-ng-if="menuIcon !== 'search'" class="{{menuIcon}}"></i><span>{{menuTitle}}</span></div>
 
@@ -149,10 +149,10 @@
 					</ul>
 					<a class="button doctors" data-ng-click="closeModal($event)" data-ng-href="/find-doctors-physicians">Show me more options</a>
 				</div>
-			</div>
+			</div>-->
 
 			<!-- Treatment Modal -->
-			<div data-ng-switch-when="treatments" class="fade-include modal-menu-item">
+			<!--<div data-ng-switch-when="treatments" class="fade-include modal-menu-item">
 				<i id="close-overlay" data-ng-click="toggleMenu('')" class="icon-remove"></i>
 				<div class="nav-modal-header"><i data-ng-if="menuIcon !== 'search'" class="{{menuIcon}}"></i><span>{{menuTitle}}</span></div>
 
@@ -160,11 +160,11 @@
 					<div data-ng-modal-quick-links data-name="Treatments" data-query="{{query}}"></div>
 					<a class="button yellow-button" data-ng-click="closeModal($event)" data-ng-href="/treatments">Show all treatments</a>
 				</div>
-			</div>
+			</div>-->
 
 
 			<!-- Locations Modal -->
-			<div data-ng-switch-when="locations" class="fade-include modal-menu-item">
+			<!--<div data-ng-switch-when="locations" class="fade-include modal-menu-item">
 				<i id="close-overlay" data-ng-click="toggleMenu('')" class="icon-remove"></i>
 				<div class="nav-modal-header"><i data-ng-if="menuIcon !== 'search'" class="{{menuIcon}}"></i><span>{{menuTitle}}</span></div>
 
@@ -172,19 +172,19 @@
 					<div data-ng-modal-quick-links data-name="Locations"></div>
 					<a class="button red-button" data-ng-click="closeModal($event)" data-ng-href="/search-results/locations">Show all locations</a>
 				</div>
-			</div>
+			</div>-->
 
 
 			<!-- Patients and Visitors Modal -->
-			<div data-ng-switch-when="patients-and-visitors" class="fade-include modal-menu-item">
+			<!--<div data-ng-switch-when="patients-and-visitors" class="fade-include modal-menu-item">
 				<i id="close-overlay" data-ng-click="toggleMenu('')" class="icon-remove"></i>
 				<div class="nav-modal-header"><i data-ng-if="menuIcon !== 'search'" class="{{menuIcon}}"></i><span>{{menuTitle}}</span></div>
 
 				<div data-ng-modal-quick-links data-name="Patients & Visitors"></div>
-			</div>
+			</div>-->
 
 			<!-- Search Modal -->
-			<div data-ng-switch-when="search" class="fade-include modal-menu-item">
+			<!--<div data-ng-switch-when="search" class="fade-include modal-menu-item">
 				<i id="close-overlay" data-ng-click="toggleMenu('')" class="icon-remove"></i>
 				<div class="nav-modal-header"><i data-ng-if="menuIcon !== 'search'" class="{{menuIcon}}"></i><span>{{menuTitle}}</span></div>
 
@@ -192,7 +192,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </header>
 <nav id="mobile-menu" role="navigation" data-ng-controller="MobileNavigationCtrl" data-ng-class="{open: menuOpen}">
     <!-- Mobile Home button -->
@@ -249,14 +249,14 @@
         <div id="home-page">
 					<div id="home-page-hero-image">
 						<div class="picture-banner">
-	 <img src="sites/www.dukemedicine.org/files/dr_rogers_us_news_home_0.jpg" alt="" typeof="foaf:Image">
+	 <img src="images/CCCDP-edited.jpg" alt="" typeof="foaf:Image">
 	 <div class="title">
 	 	<span class="banner-logo"></span>
-	 	<span class="cta-text">TEXT</span>
+	 	<span class="cta-text">Come back often for the latest announcements!</span>
 	 	<span class="patient-id">        	 		<span class="patient-location"></span>
 	 	</span>
     	 	<div class="home-call-to-action">
-	 		<a class="button red-button" href="https://www.dukemedicine.org/find-doctors-physicians" title="LearnMore">BUTTON</a>
+	 		<a class="button red-button" href="https://www.dukemedicine.org/find-doctors-physicians" title="LearnMore">Learn More</a>
 	 	</div>
     	 </div>
 </div>
@@ -295,17 +295,17 @@
                 <h2>Access Duke MyChart</h2>
                 <a href="https://www.dukemychart.org/home/" target="_blank"><div class="button log-in-button">Login or sign up</div></a>
               </div>-->
-              <!--<div class="welcome-button">
-                <h2 class="call-us-header">Doctor or researcher?</h2>
-                <div class="button take-me-to-button wipe-button">
+              <div class="welcome-button">
+                <h2 class="call-us-header">The CCCDP and CASTLE at UNC Ear and Hearing Center is a place where miracles happen for kids with hearing loss. Be sure to check back often for updates, new events and announcements. And thank you for your support!</h2>
+                <!--<div class="button take-me-to-button wipe-button">
                   <a class="main-link">Take me to...<i class="icon-angle-down"></i></a>
                   <span class="secondary-links">
                     <a href="https://www.dukemedicine.org/referring-physicians" class="second-link">Physician resources</a>
                     <a href="http://corporate.dukemedicine.org/" target="_blank" class="second-link">About Duke Medicine </a>
                     <a href="http://medschool.duke.edu/" target="_blank" class="second-link">Duke School of Medicine</a>
                   </span>
-                </div>
-              </div>-->
+                </div>-->
+              </div>
               <!--<div class="welcome-button">
                 <h2>Give us a call</h2>
                 <div class="duke-phone"><a href="tel:855.855.6484"><i class="icon-phone"></i>855.855.6484</a></div>
@@ -381,8 +381,8 @@
         </div>
         <!-- Giving section -->
         <div class="giving-section">
-          <div class="support-text">Support CASTLE</div>
-          <a href="http://dukeforward.dukemedicine.org " target="_blank" class="button blue-fill">Donate to CASTLE</a>
+          <div class="support-text">Support UNC research and change lives</div>
+          <a href="https://secure.dev.unc.edu/gift/Default.aspx?p=MFOT" target="_blank" class="button blue-fill">Donate to CASTLE</a>
         </div>
                                       </div><!-- /#content -->
 
@@ -392,14 +392,14 @@
     <div class="connect-footer">
       <a href="index.html"><div class="footer-logo"></div></a>
       <ul>
-        <li class="fb"><a href="http://www.facebook.com/dukemedicine" target="_blank"><i class="icon-facebook"></i></a></li>
-        <li class="gp"><a href="http://plus.google.com/u/0/115639239449127091684/posts" target="_blank"><i class="icon-google-plus"></i></a></li>
-        <li class="tw"><a href="http://twitter.com/Duke_Medicine" target="_blank"><i class="icon-twitter"></i></a></li>
-        <li class="yt"><a href="http://youtube.com/user/Dukemedicine" target="_blank"><i class="icon-youtube-play"></i></a></li>
+        <li class="fb"><a href="https://www.facebook.com/UNCCCCDPCASTLE" target="_blank"><i class="icon-facebook"></i></a></li>
+        <li class="gp"><a href="https://plus.google.com/116606888862882957912/posts" target="_blank"><i class="icon-google-plus"></i></a></li>
+        <li class="tw"><a href="https://twitter.com/uncpedscis" target="_blank"><i class="icon-twitter"></i></a></li>
+        <li class="yt"><a href="https://www.youtube.com/user/UNCCochlearImplants" target="_blank"><i class="icon-youtube-play"></i></a></li>
       </ul>
       <div class="questions-footer">
         <a href="tel:855.855.6484" class="ask-duke" id="green-mobile-button">
-          <i class="icon-phone"></i>855.855.6484
+          <i class="icon-phone"></i>(919) 419-1428
         </a>
       </div>
     </div>
@@ -427,7 +427,7 @@
     </div>
     <div class="footer-seperator"></div>
     <div class="duke-copyright-footer">
-      <div class="copy">Copyright © 2004-2014  Duke University Health System</div>
+      <div class="copy">Copyright © something</div>
     </div>
   </div>
 </footer><!-- region__footer -->

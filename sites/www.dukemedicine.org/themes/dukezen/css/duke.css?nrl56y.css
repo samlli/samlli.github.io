@@ -1585,7 +1585,10 @@ body {
   top: 10%;
   margin: 0 auto;
   max-width: 1431px;
-  width: 100%;
+  width: 300px;
+  padding: 30px;
+  right: 20px;
+  background-color: rgba(171,171,171,0.6);
 }
 /* line 48, ../sass/styleguide/modules/_picture-banner.scss */
 .picture-banner .title .cta-text {
@@ -4220,8 +4223,8 @@ body.open {
 
 /* line 25, ../sass/navigation/_desktop.scss */
 .main-menu-mychart, .main-menu-pandv {
-  font-size: 12px;
-  font-size: 0.75rem;
+  /*font-size: 12px;
+  font-size: 0.75rem;*/
   padding-top: 23px;
   position: relative;
   top: -2px;
@@ -4336,7 +4339,7 @@ body.open {
 @media all and (min-width: 1100px) {
   /* line 138, ../sass/navigation/_desktop.scss */
   .main-menu-doctors {
-    letter-spacing: 1px;
+    /*letter-spacing: 1px;*/
   }
 }
 
@@ -4349,15 +4352,15 @@ body.open {
   padding: 0 20px;
   width: 25%;
   height: 85px;
-  background: #00569d;
+  background: #ffffff;
 }
 /* line 165, ../sass/navigation/_desktop.scss */
 .nav-home-btn #nav-logo-image {
   display: block;
   margin: 21px auto 9px auto;
   height: 44px;
-  background: url("../images/duke_logo.svg");
-  background-size: cover;
+  background: url("../images/castle-icon.png");
+  background-size: 80%;
   position: relative;
   z-index: 99;
   -ms-behavior: url(https://www.dukemedicine.org/sites/www.dukemedicine.org/themes/dukezen/polyfill/backgroundsize.min.htc);
@@ -5830,7 +5833,7 @@ tbody {
 }
 /* line 44, ../sass/_footer.scss */
 .footer-holder .connect-footer .footer-logo {
-  background: url("../images/official-duke-logo.png");
+  background: url("../images/castle-icon.png");
   background-size: cover;
   position: relative;
   z-index: 99;
