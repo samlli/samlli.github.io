@@ -6008,7 +6008,7 @@ tbody {
 /* line 185, ../sass/_footer.scss */
 .footer-holder .footer-links .column-one {
   float: left;
-  width: 25%;
+  /*width: 25%;*/
   margin-left: 31.25%;
   margin-right: -56.25%;
   padding-left: 15px;
