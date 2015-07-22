@@ -1719,8 +1719,8 @@ body {
   }
   /* line 154, ../sass/styleguide/modules/_picture-banner.scss */
   .picture-banner img {
-    max-width: 200%;
-    max-height: 300px;
+    /*max-width: 200%;
+    max-height: 300px;*/
   }
 }
 /* line 1, ../sass/styleguide/modules/_related-articles.scss */
@@ -4232,8 +4232,8 @@ body.open {
 @media all and (max-width: 1020px) {
   /* line 25, ../sass/navigation/_desktop.scss */
   .main-menu-mychart, .main-menu-pandv {
-    font-size: 11px;
-    font-size: 0.6875rem;
+    /*font-size: 11px;
+    font-size: 0.6875rem;*/
   }
 }
 
@@ -4291,7 +4291,7 @@ body.open {
 
 /* line 86, ../sass/navigation/_desktop.scss */
 .main-menu-link {
-  width: 14%;
+  width: 17.5%;
   text-align: center;
 }
 
@@ -4612,7 +4612,7 @@ body.open {
     z-index: 99;
     width: 100%;
     height: 45px;
-    background: #00569d;
+    background: #212121;
   }
 
   /* Search button */
@@ -4722,7 +4722,7 @@ body.open {
     position: relative;
     width: 192px;
     height: 45px;
-    background-image: url(../images/duke_logo.svg);
+    background-image: url(../images/castle-icon.png);
     background-position: 0;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -6170,7 +6170,7 @@ tbody {
   /* line 274, ../sass/_footer.scss */
   .footer-holder .footer-links .column-one {
     float: left;
-    width: 31.25%;
+    /*width: 31.25%;*/
     margin-left: 0%;
     margin-right: -31.25%;
     padding-left: 15px;
