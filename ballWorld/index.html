@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>ballworld</title>
+<link rel="stylesheet" href="ballWorld.css"/>
+<script type="text/javascript" src="ballWorld.js">
+</script>
+</head>
+<body onload="main();">
+<h1>ballworld</h1>
+<div class="display">
+<canvas id="myCanvas" width="600px" height="400px">
+</canvas>
+</div>
+
+<div style="width:100%; margin:0;">
+<div class="colorHolder">
+<p><p style="color:red">Red</p>
+<input id="red" type="range" min="0" max="255" value="0" onchange="updateRed(this.value);"/>
+</p>
+</div>
+<div class="colorHolder">
+<p><p style="color:green">Green</p>
+<input id="green" type="range" min="0" max="255" value="0" onchange="updateGreen(this.value);"/>
+</p>
+</div>
+<div class="colorHolder">
+<p><p style="color:blue">Blue</p>
+<input id="blue" type="range" min="0" max="255" value="0" onchange="updateBlue(this.value);"/>
+</p>
+</div>
+
+<div class="colorHolder">
+<p>Radius:<span id="radiusSpot">50</span></p>
+<p><input id="blue" type="range" min="0" max="300" value="50" onchange="radius = parseInt(this.value); document.getElementById('radiusSpot').innerHTML=radius;"/></p>
+</div>
+
+<div class="colorHolder">
+<p>HexCode:<code id="hexSpot">0x000000</code><p>
+</div>
+
+<div class="colorHolder">
+<p>NextColor:<span id="swatch">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+</div>
+
+</div>
+
+<p><button onclick="document.getElementById('myCanvas').style.backgroundColor=color;">Change Background</button></p>
+
+</body>
+</html>
