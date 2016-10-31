@@ -1,5 +1,5 @@
 <!doctype html>
-<!--Author: Morrison-->
+<!--Author: emily wen samuel li-->
 
 <html>
 <head>
@@ -14,24 +14,28 @@
     <h1> Road Rage</h1>
     <img src="http://static7.depositphotos.com/1007989/760/i/950/depositphotos_7602480-Road-rage.jpg" alt="Road Rage Picture" width="409.6px" height="366px">
     <br><br>
-    <button id="btnplay" class="button" onclick="actualGame()">PLAY</button> 
+    <button id="btnplay" class="button" onclick="playGame()">PLAY</button> 
     <br>
-    <button id="btninst" class="button"  onclick="instructions()">HOW TO PLAY </button>
+    <button id="btninst" class="button"  onclick="instructionsPage()">HOW TO PLAY </button>
     </div>
    
 
     <div id="instructions">
     <h1> How to Play </h1>
-    <br>
+    <br> 
     <p> Road Rage is a 2-player game. </p>
-    <br>
-    <h4> Objective: </h4>
+    <p> The cars drive around in a space filled with walls. The up to 5 bullets each car can shoot cannot go through walls.
+    </p>
+    <p>However, the center of both cars give them the special ability to drive through objects, including walls and other cars.
+    </p>
+    <p>But a bullet hitting this almighty center of the car can destroy the car.  
+    </p>
     <p> The controls for the first player are:</p>
     <p> Arrow Keys to move. Space to shoot. </p>
     <p> The controls for the second player are:</p>
-    <p> ASDW to move. F to shoot. </p>
-    <button id="btnplay" class="button" onclick="actualGame()">PLAY</button> 
-    <br><br><br><br>
+    <p> ASDW to move. Q to shoot. </p>
+    <button id="btnplay" class="button" onclick="playGame()">PLAY</button> 
+    <br><br><br>
     <img src="http://riflesready.files.wordpress.com/2008/06/wasd_vs_arrows.jpg" alt="WASD versus Arrow Keys Picture" width="225px" height="112px">
     </div>
 
@@ -43,14 +47,30 @@
     <br><br><br><br>
     </div>
 
-    <div id="actualGame">
-    
+    <div id="actualGame">  
     <div id="tryin2center" class="behind">
     <canvas id="myCanvas" class="behind" width="800px" height="400px"></canvas>
     </div>
     </div>
+
     <div id="gameButton">
-    <button id="btninst" class="button"  onclick="instructions()">HOW TO PLAY </button>
+    <button id="btninst" class="button"  onclick="instructionsPage()">HOW TO PLAY </button>
+    </div>
+    
+    <div id="redWon">
+    <br><br><br><br><br>
+    <p> RED WON </p>
+    </div>
+
+    <div id="blueWon">
+    <br><br><br><br><br>
+    <p> BLUE WON </p>
+    </div>
+    
+    <div id="playAgain">
+    <br><br><br>
+    <br><br><br><br><br>
+    <button id="btnplay" class="button" onclick="restart()">PLAY AGAIN</button>  
     </div>
 
 </body>

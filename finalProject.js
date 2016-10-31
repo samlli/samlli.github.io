@@ -2,9 +2,10 @@
 
 //game is not active initially
 var onGame=false;
-
+var mazeArray=[];
+var whoWon;
 //display game page
-function actualGame()
+function playGame()
 {
     var coverPage=document.getElementById("coverPage");
     var instructions=document.getElementById("instructions");
@@ -12,6 +13,12 @@ function actualGame()
     var title=document.getElementById("title");
     var blankSpace=document.getElementById("blankSpace");
     var gameButton=document.getElementById("gameButton");
+    var redWon=document.getElementById("redWon");
+    var blueWon=document.getElementById("blueWon");
+    var playAgain=document.getElementById("playAgain");
+    redWon.style.display="none";
+    blueWon.style.display="none";
+    playAgain.style.display="none";
     blankSpace.style.display="none";
     gameButton.style.display="block";
     title.style.display="block";
@@ -23,7 +30,7 @@ function actualGame()
 }
 
 //display instruction page
-function instructions()
+function instructionsPage()
 {
     var coverPage=document.getElementById("coverPage");
     var instructions=document.getElementById("instructions");
@@ -31,6 +38,12 @@ function instructions()
     var title=document.getElementById("title");
     var blankSpace=document.getElementById("blankSpace");
     var gameButton=document.getElementById("gameButton");
+    var redWon=document.getElementById("redWon");
+    var blueWon=document.getElementById("blueWon");
+    var playAgain=document.getElementById("playAgain");
+    redWon.style.display="none";
+    blueWon.style.display="none";
+    playAgain.style.display="none";
     blankSpace.style.display="block";
     gameButton.style.display="none";
     title.style.display="none";
@@ -39,6 +52,36 @@ function instructions()
     actualGame.style.display="block";
     onGame=false;
     console.log("game start", onGame);
+}
+//display whoWon 
+function endGame()
+{
+    onGame=false;
+    setTimeout(toWait(),2000);
+}
+function toWait()
+{
+    if (whoWon)
+    {
+    redWon.style.display="block";
+    }
+    else
+    {
+    blueWon.style.display="block";
+    }
+    playAgain.style.display="block";
+    blankSpace.style.display="none";
+    gameButton.style.display="none";
+    title.style.display="block";
+    coverPage.style.display="none";
+    instructions.style.display="none";
+    actualGame.style.display="block";
+
+}
+//restart game
+function restart()
+{
+    location.reload();
 }
 
 //player1
@@ -193,7 +236,22 @@ function drawBoundaries(pen){
     pen.fillRect(799,0,1,400);
     pen.fillRect(0,399,800,1);
 }
+function distBullet()
+{
+       if (dist1<30){
+           whoWon=0;
+           console.log("collision p1");
+           endGame();
+       }
 
+
+       if (dist2<30){
+           whoWon=1;
+           endGame();
+           console.log("collision p2");
+       }
+
+}
 function main()
 {
     //array of bullets for player1 player2 and array of maze
@@ -207,6 +265,12 @@ function main()
     var title=document.getElementById("title");
     var blankSpace=document.getElementById("blankSpace");
     var gameButton=document.getElementById("gameButton");
+    var redWon=document.getElementById("redWon");
+    var blueWon=document.getElementById("blueWon");
+    var playAgain=document.getElementById("playAgain");
+    redWon.style.display="none";
+    blueWon.style.display="none";
+    playAgain.style.display="none";
     blankSpace.style.display="none";
     gameButton.style.display="none";
     title.style.display="none";
@@ -214,9 +278,11 @@ function main()
     instructions.style.display="none";
     actualGame.style.display="none";
 
+
     //canvas
     var canvas=document.getElementById("myCanvas");
     var pen=canvas.getContext("2d");
+    clear();
 
     //draw player1 player2
     drawSquare(x1,y1,d1,c1,C1,pen);
@@ -325,16 +391,6 @@ function main()
         });
 
         }  
-        
-        //update bullets
-        player1Bullets.forEach(function(bullet){
-            bullet.bulletUpdate();
-            bullet.bulletDraw();
-        });
-        player2Bullets.forEach(function(bullet){
-            bullet.bulletUpdate();
-            bullet.bulletDraw();
-        });
     };
 
     //move bullets
@@ -350,10 +406,52 @@ function main()
         });
         if (onGame){
             player1Bullets.forEach(function(bullet){
+                var dx1=x1-bullet.x;
+                var dy1=y1-bullet.y;
+                var dist1=Math.sqrt(dx1*dx1+dy1*dy1);
+
+                var dx2=x2-bullet.x;
+                var dy2=y2-bullet.y;
+                var dist2=Math.sqrt(dx2*dx2+dy2*dy2);
+                
+                
+                if (dist1<30){
+                    whoWon=0;
+                    console.log("collision p1");
+                    endGame();
+                }
+
+
+                if (dist2<30){
+                    whoWon=1;
+                    endGame();
+                    console.log("collision p2");
+                }
+
                 bullet.bulletUpdate();
                 bullet.bulletDraw();
             });
             player2Bullets.forEach(function(bullet){
+                var dx1=x1-bullet.x;
+                var dy1=y1-bullet.y;
+                var dist1=Math.sqrt(dx1*dx1+dy1*dy1);
+
+                if (dist1<40){
+                    whoWon=0;
+                    endGame();
+                    console.log("collision p1");
+                }
+                
+                var dx2=x2-bullet.x;
+                var dy2=y2-bullet.y;
+                var dist2=Math.sqrt(dx2*dx2+dy2*dy2);
+
+                if (dist2<40){
+                    whoWon=1;
+                    endGame();
+                    console.log("collision p2");
+                }
+
                 bullet.bulletUpdate();
                 bullet.bulletDraw();
             });
@@ -385,8 +483,8 @@ function Bullet(x,y,d,c,pen)
 {
     var bulletspeed=15;
     var incrementer=0;
-    this.x=x+5;
-    this.y=y+5;
+    this.x=x+cosd(d-135)*40;
+    this.y=y+sind(d-135)*40;
     this.xvel=cosd(d-135)*bulletspeed;
     this.yvel=sind(d-135)*bulletspeed;
 
@@ -427,4 +525,3 @@ function Bullet(x,y,d,c,pen)
         pen.fill();
     }
 }
-
