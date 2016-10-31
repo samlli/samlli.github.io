@@ -436,7 +436,7 @@ function main()
                 var dy1=y1-bullet.y;
                 var dist1=Math.sqrt(dx1*dx1+dy1*dy1);
 
-                if (dist1<40){
+                if (dist1<30){
                     whoWon=0;
                     endGame();
                     console.log("collision p1");
@@ -446,7 +446,7 @@ function main()
                 var dy2=y2-bullet.y;
                 var dist2=Math.sqrt(dx2*dx2+dy2*dy2);
 
-                if (dist2<40){
+                if (dist2<30){
                     whoWon=1;
                     endGame();
                     console.log("collision p2");
