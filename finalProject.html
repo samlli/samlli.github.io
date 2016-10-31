@@ -1,0 +1,57 @@
+<!doctype html>
+<!--Author: Morrison-->
+
+<html>
+<head>
+<title>finalProject</title>
+<link rel="stylesheet" href="finalProject.css"/>
+<script type="text/javascript" src="finalProject.js">
+</script>
+</head>
+<body onload="main();">
+    
+    <div id="coverPage" class="front">
+    <h1> Road Rage</h1>
+    <img src="http://static7.depositphotos.com/1007989/760/i/950/depositphotos_7602480-Road-rage.jpg" alt="Road Rage Picture" width="409.6px" height="366px">
+    <br><br>
+    <button id="btnplay" class="button" onclick="actualGame()">PLAY</button> 
+    <br>
+    <button id="btninst" class="button"  onclick="instructions()">HOW TO PLAY </button>
+    </div>
+   
+
+    <div id="instructions">
+    <h1> How to Play </h1>
+    <br>
+    <p> Road Rage is a 2-player game. </p>
+    <br>
+    <h4> Objective: </h4>
+    <p> The controls for the first player are:</p>
+    <p> Arrow Keys to move. Space to shoot. </p>
+    <p> The controls for the second player are:</p>
+    <p> ASDW to move. F to shoot. </p>
+    <button id="btnplay" class="button" onclick="actualGame()">PLAY</button> 
+    <br><br><br><br>
+    <img src="http://riflesready.files.wordpress.com/2008/06/wasd_vs_arrows.jpg" alt="WASD versus Arrow Keys Picture" width="225px" height="112px">
+    </div>
+
+    <div id="title">
+    <h1>Road Rage</h1>
+    </div>
+    
+    <div id="blankSpace">
+    <br><br><br><br>
+    </div>
+
+    <div id="actualGame">
+    
+    <div id="tryin2center" class="behind">
+    <canvas id="myCanvas" class="behind" width="800px" height="400px"></canvas>
+    </div>
+    </div>
+    <div id="gameButton">
+    <button id="btninst" class="button"  onclick="instructions()">HOW TO PLAY </button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+p{
+	margin-left:15%;
+	width:70%;
+}
+.header{
+	background: url("5873.jpg") no-repeat top center fixed;
+	background-size:cover;
+	margin:0px;
+	padding:0px;
+	height:100%;
+	width:100%;
+}
+.content{
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
