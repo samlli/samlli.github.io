@@ -17,6 +17,10 @@ body {
   padding-bottom: 10px; */
 }
 
+img{
+  max-width: 300px;
+}
+
 .navbar-static-top {
   margin-bottom: 19px;
 }
