@@ -24,6 +24,16 @@
       for a WS2812B addressable RGB LED strip.  This would allow me to use the LED strip to carry out
       a variety of tasks, such as displaying a rainbow wave, pulsing various colors, as a visualizer for
       music, and many more!</p>
+    <p>Arduino controllers are extremely powerful, and can do almost anything you tell them to, short of
+      making you a sandwich.  As stated on the Arduino.cc website:</p>
+    <blockquote cite="https://www.arduino.cc/en/Guide/Introduction">
+      Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino
+      boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and
+      turn it into an output - activating a motor, turning on an LED, publishing something online. You can
+      tell your board what to do by sending a set of instructions to the microcontroller on the board.
+    </blockquote>
+    <p>The project is built using the Arduino IDE, which can be obtained
+      <a href="https://www.arduino.cc/en/Main/Software">here</a></p>
   </div>
   <div id="materials">
     <h1>materials</h1>
@@ -31,14 +41,29 @@
     <ul>
       <li>Arduino Pro Micro</li>
       <li>WS2812B Addressable LED Strip</li>
-      <li>MicroUSB FemaleBreakout Board</li>
+      <li>Lots of wire</li>
+    </ul>
+    <p>If you want to go overboard, there are several optional components that I also used, and which will
+      make maintenance in the future a breeze.</p>
+    <ul>
+      <li>MicroUSB Female Breakout Board</li>
       <li>Two-way Switch</li>
       <li>MicroUSB Male Plug</li>
       <li>10μF Electrolytic Capacitor</li>
       <li>560Ω Resistor</li>
-      <li>Lots of wire</li>
+      <li>Push Button</li>
+      <li>Really Small Wire</li>
     </ul>
-    <img src="/miniterm_18/images/parts.jpg" alt="all the parts used">  </div>
+    <p>A picture of most of the parts laid out.  The writing in the image details the specifications of
+      the WS2812B strip used.  With 60 LEDs in it, it draws 18 watts of power, requires an input voltage
+      of 5V DC, and draws 3.6 amps of current, or 0.06 amps per LED.</p>
+    <img src="/miniterm_18/images/parts.jpg" alt="all the parts used">
+    <p>About midway through the project I realized that power draw would be an issue.  If the Pro Micro
+      is drawing too much power, it will 'freeze' and be unresponsive to new commands.  There are multiple
+      ways to tackle this problem.  Perhaps the simplest solution is to chop off a few LEDs, thus lowering
+      the power requirement.  Another solution is to use another external power supply that is capable of
+      providing the 3.6 amps required.</p>
+  </div>
   <div id="process">
     <h1>process</h1>
     <p>Before I began this project, I had not had much experience using the Arduino board or the software,
@@ -50,14 +75,37 @@
       5V/16MHz version.  If you can, be sure to pick up the 5V/16MHz version, which is the one that I am
       using, as it will allow you to output more power through the VCC pin.  For my project, the only pins
       that are used are VCC, GND, and pin 4.  VCC and GND are used to provide power to the WS2812B strip,
-      whereas pin 4 is used to output the data that is used to control the colors of the strip.
+      whereas pin 4 is used to output the data that is used to control the colors of the strip.</p>
+    <p>After downloading the Arduino IDE from the link above, we will need to pick up the Pro Micro specific
+      board (.brd) files in order to communicate with the board itself.  Instructions on how to do so can
+      be found
+      <a href="https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide#windows_boardaddon">here</a></p>
+    <p>Next, we need to hook up the actual RGB LED strip to the board using the three pins mentioned above.
+      Although it is not necessary, I recommend using a decoupling capacitor in parallel between the VCC and
+      GND pins in order to sanitize your power input.  As the power draw of the strip will vary wildly depending
+      on the colors displayed as well as the number of LEDs active, this resistor will help balance everything out.
+      A recommended size is anywhere from 100 - 1000μF, though I used a 10μF since it was the only one I had
+      available.  Another component that I recommend is a resistor in series on the data line, which is pin 4.
+      This works to sanitize the data input for the strip.  The WS2812B consists of many small ICs, and the
+      capacitor + resistor will help protect these components!</p>
+    <p>In order to plan everything out, I drew up the circuit diagram below</p>
     <img src="/miniterm_18/images/circuit.jpg" alt="circuit diagram">
+    <p>The circuit also includes an optional 2-way switch on the GND line, which I included in order to be able
+      to power the device on and off without having to remove the MicroUSB cable.  This allows me to simply and
+      quickly restart the device in the case of any issues.  I also included a push button between RST and GND.
+      If the pro micro ever encounters any issues or becomes 'bricked', the inclusion of a button will make shorting
+      RST and GND a simple task!</p>
+    <p>However, I should point out that neither of those components (capacitor, resistor, button), are necessary.
+      I do highly recommend them if you have the components at hand!</p>
+    <p>I wanted to be able to use the WS2812B strip as a backlight for my monitor, so I laid it out according to my
+      monitor dimensions.  As seen in the image below, there are 20 LEDs across the top, 16 down each side, and 4
+      on either side of the monitor stand</p>
     <img src="/miniterm_18/images/layout.jpg" alt="led layout">
   </div>
   <div id="results">
     <h1>results</h1>
     <p>After setting out to complete the program and assemble the circuit, I was able to squeeze all the
-      components into a
+      components into a</p>
     <img src="/miniterm_18/images/internals.jpg" alt="all the parts used">
     <img src="/miniterm_18/images/cutout.jpg" alt="all the parts used">
   </div>
