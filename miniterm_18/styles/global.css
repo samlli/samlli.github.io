@@ -8,13 +8,13 @@ body {
   min-height: 2000px;
 }
 
-#deals {
-  background-color: #b30000;
-  color: #ffffff;
+#footer {
+  background-color: #536582;
+  /* color: #ffffff;
   text-align: center;
   margin: 0px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 10px; */
 }
 
 .navbar-static-top {
@@ -265,6 +265,3 @@ body {
   display: inline-block;
   /*border-radius: 50%;*/
 }
-
-
-
