@@ -16,7 +16,6 @@
     <h1>Samuel Li's Miniterm 2017-18</h1>
     <h3>Android WS2812B Development</h3>
     <img src="/miniterm_18/images/ws2812b.PNG" alt="ws2812b">
-    <img src="/miniterm_18/images/pro_micro_only.jpg" alt="pro micro">
   </div>
   <div id="intro">
     <h1>intro</h1>
@@ -36,6 +35,7 @@
       <a href="https://www.arduino.cc/en/Main/Software">here</a></p>
   </div>
   <div id="materials">
+    <img src="/miniterm_18/images/pro_micro.jpg" alt="pro micro">
     <h1>materials</h1>
     <p>The materials I used included:</p>
     <ul>
@@ -52,6 +52,13 @@
       <li>10μF Electrolytic Capacitor</li>
       <li>560Ω Resistor</li>
       <li>Push Button</li>
+      <li>Case</li>
+      <li>Wire Strippers</li>
+      <li>Flush Cutters</li>
+      <li>Soldering Iron</li>
+      <li>Desoldering Iron (for your mistakes)</li>
+      <li>Solder</li>
+      <li>Multimeter</li>
       <li>Really Small Wire</li>
     </ul>
     <p>A picture of most of the parts laid out.  The writing in the image details the specifications of
@@ -99,15 +106,28 @@
       I do highly recommend them if you have the components at hand!</p>
     <p>I wanted to be able to use the WS2812B strip as a backlight for my monitor, so I laid it out according to my
       monitor dimensions.  As seen in the image below, there are 20 LEDs across the top, 16 down each side, and 4
-      on either side of the monitor stand</p>
+      on either side of the monitor stand.  The individual strips are chained together, with GND->GND, VCC->VCC, and
+      DOUT->DIN</p>
     <img src="/miniterm_18/images/layout.jpg" alt="led layout">
+    <p>Although it is perfectly alright to use a breadboard or to socket the Pro Micro and use header pins to connect
+      everything up, I wanted something that would be neater on the outside, something that I could leave on my desk
+      and not have it looking like a rat's nest.  I found a neat battery case that happened to match the dimensions of
+      the Pro Micro almost exactly.  Using my flush cutters, I was able to cut out holes in the case in order to fit
+      everything inside.  I used a soldering station - Hakko FX-888D to be specific - to wire everything up and tested
+      continuity with a multimeter to make sure there were no bridged pins.</p>
+    <p>The completed device is shown below</p>
+    <img src="/miniterm_18/images/internals.jpg" alt="all the parts used">
+    <img src="/miniterm_18/images/cutout.jpg" alt="all the parts used">
+    <p>In the first pic, the three VCC, GND, and Data wires coming from the WS2812B are not soldered in yet, and the
+      opening for the microUSB can be seen on the top side.  In the second pic, everything has been squeezed inside and
+      the hole for the microUSB port is seen.</p>
+    <p>Next, we are able to hook up the strip and upload the code to it.  The Adafruit NeoPixel LED library contains many
+      useful and helpful functions which we can borrow from in order to make ours.</p>
+    <p>My code can be found here</p>
   </div>
   <div id="results">
     <h1>results</h1>
-    <p>After setting out to complete the program and assemble the circuit, I was able to squeeze all the
-      components into a</p>
-    <img src="/miniterm_18/images/internals.jpg" alt="all the parts used">
-    <img src="/miniterm_18/images/cutout.jpg" alt="all the parts used">
+    <p>After setting out to complete the program and assemble the circuit, I was able to</p>
   </div>
 
   <div id="footer"></div>
