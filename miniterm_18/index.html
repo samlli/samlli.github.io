@@ -38,18 +38,28 @@
       <li>560Ω Resistor</li>
       <li>Lots of wire</li>
     </ul>
-    <img src="/miniterm_18/images/parts.jpg" alt="all the parts used">
-  </div>
+    <img src="/miniterm_18/images/parts.jpg" alt="all the parts used">  </div>
   <div id="process">
     <h1>process</h1>
     <p>Before I began this project, I had not had much experience using the Arduino board or the software,
       so I first started off by putting the name of the Pro Micro into almighty google.  Google returned
       a list of several very helpful sources, including one by Adafruit covering the usage and pinout of the
-      controller</p>
+      Pro Micro controller, seen below.</p>
+    <img src="/miniterm_18/images/pinout.png" alt="pinout of the controller"/>
+    <p>There are multiple versions of the Pro Micro that have been released - a 3.3V/8MHz one, and a
+      5V/16MHz version.  If you can, be sure to pick up the 5V/16MHz version, which is the one that I am
+      using, as it will allow you to output more power through the VCC pin.  For my project, the only pins
+      that are used are VCC, GND, and pin 4.  VCC and GND are used to provide power to the WS2812B strip,
+      whereas pin 4 is used to output the data that is used to control the colors of the strip.
+    <img src="/miniterm_18/images/circuit.jpg" alt="circuit diagram">
+    <img src="/miniterm_18/images/layout.jpg" alt="led layout">
   </div>
   <div id="results">
     <h1>results</h1>
-    <p>I was able to create</p>
+    <p>After setting out to complete the program and assemble the circuit, I was able to squeeze all the
+      components into a
+    <img src="/miniterm_18/images/internals.jpg" alt="all the parts used">
+    <img src="/miniterm_18/images/cutout.jpg" alt="all the parts used">
   </div>
 
   <div id="footer"></div>
