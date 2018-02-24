@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Your Favicon Package
 
 This package was generated with [RealFaviconGenerator](https://realfavicongenerator.net/) [v0.16](https://realfavicongenerator.net/change_log#v0.16)
@@ -19,3 +20,12 @@ Insert the following code in the `head` section of your pages:
     <meta name="theme-color" content="#2b5797">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
+||||||| merged common ancestors
+=======
+# Samuel Li's Github Page
+Welcome to samlli.github.io!  I use this pages site to host some of my web dev projects - though some are outdated/will not be maintained anymore...
+
+Feel free to take a look around!  I plan to update this as I go along, and if you have any questions - shoot me an email at samuelli.pk@gmail.com
+
+:)
+>>>>>>> 43e4a1e82dac6b32df91c2be3961cd5f23705f14
