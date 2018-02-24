@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Web Dev</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <!--<div>
+      <h5 id="deals">discount</h5>
+    </div>-->
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Web Dev</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="progress.html">Daily Progress</a></li>
+            <li><a href="jquery.html">jQuery</a></li>
+            <li><a href="bootstrap.html">Bootstrap</a></li>
+            <li><a href="php.html">PHP</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Useful Links<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://jquery.com">jQuery</a></li>
+                <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+                <li><a href="https://secure.php.net/">PHP</a></li>
+                <!--<li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>-->
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!--<li><a href="../navbar/">Default</a></li>
+            <li class="active"><a href="./">Static top <span class="sr-only">(current)</span></a></li>
+            <li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Sidebar
+    ================================================== -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#intro">Introduction <span class="sr-only">(current)</span></a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="#day1">Day 1</a></li>
+            <li><a href="#day2">Day 2</a></li>
+            <li><a href="#day3">Day 3</a></li>
+            <li><a href="#day4">Day 4</a></li>
+            <li><a href="#day5">Day 5</a></li>
+            <li><a href="#day6">Day 6</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <!--<h1 class="page-header">Dashboard</h1>-->
+
+          <div id="intro">
+            <h2 class="sub-header">Daily Progress</h2>
+            <p>For my miniterm project I chose to pursure a more in depth exploration of web development, using tools such as jQuery, Bootstrap, and PHP.  Throughout this mintierm, I learned many useful and valuable lessons.  The outline below details my schedule, so that you too may become a better web developer.</p>
+            </br>
+          </div>
+          <div id="day1">
+            <h4 class="sub-header">Day 1: SEO, UX, Mobile-Friendly</h4>
+            <p>On day 1, I sought to explore the basic concepts behind the web interface and how we interact with websites.  I explored search engine optimization, the ux/ui, and mobile-friendliness.  Search engine optimization (seo), is defined as "the process of affecting the visibility of a website or a web page in a web search".  It is the process by which a search engine such as google determines the 'ranking' of a page on its list of results.  The user experience and user interface is another similarly important facet of web development.  These concepts can be used to determine the optimum design and layout of a page to facilitate ease of use and ease of access.  Lastly, as mobile devices are becoming increasingly common, it is important to ensure that your webpage is mobile friendly.  It would be a poor user experience to have tiny buttons and tiny text on a 4 inch screen, so the way we solve this issue is by using modals.  Modals can control the css that is active based on the screen size detected, allowing you to effectively scale your page for smaller devices.</p>
+            </br>
+          </div>
+          <div id="day2">
+            <h4 class="sub-header">Day 2: Javascript and jQuery</h4>
+            <p>Javascript is a powerful tool to use in order to create responsive web pages.  Javascript allows you to control the behavior of a webpage, based on the actions of a user.  For example, you could use the javascript <code>onclick=function()</code> event to set a function that excecutes whenever a user clicks on an element.</p>
+            <p>jQuery aims to take the javascript one step further, by simplifying common functions.  While it may initially seem different from javascript, jQuery is infact simply a javascript library.  It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.</p>
+            </br>
+          </div>
+          <div id="day3">
+            <h4 class="sub-header">Day 3: HTML/CSS and Bootstrap</h4>
+            <p>Together, HTML and CSS make up the backbone of nearly every website on the internet.  HTML, or hypertext markup language, controls the structure and shape of a webpage, by defining elements such as headers <code>h1</code>, divs <code>div</code>, and lists <code>ul</code>.  CSS works in conjunction with HTML, by delivering an effective method to stylize and customize the html elements.  It allows you to set properties such as <code>background-color</code>, <code>width</code>, and <code>margin</code>.</p>
+            <p>Bootstrap, unlike jQuery, is not a library for HTML, it is a framework which includes countless defined HTML elements and their corresponding styling.  It serves to speed up web development by providing many of the basic elements needed and by implementing mobile-friendly development.  In addition to the common html elements, it also includes numerous custom HTML and CSS components and jQuery plugins.</p>
+            </br>
+          </div>
+          <div id="day4">
+            <h4 class="sub-header">Day 4: PHP</h4>
+            <p>PHP is a recursive acronym for <em>PHP: Hypertext Preprocessor</em>.  PHP is a widely used scripting language which can be embedded into HTML and used to carry out a variety of tasks.  The embedded code from PHP is executed on the server, then the results are sent to the web browser.  Since the browser only receives the results of the PHP execution, and not the code, it can become an incredibly versatile tool.  Of note is the function <code>include</code>.  The <code>include</code> function can be used to include other html files within the main html file itself.  The browser is unable to tell the difference between the two, since it is only given the final output, and not the code beneath it.</p>
+            </br>
+          </div>
+          <div id="day5">
+            <h4 class="sub-header">Day 5: Building a Webpage</h4>
+            <p>Now, it is time to put together all the HTML, CSS, and JS.  Using Bootstrap for some HTML and CSS components and jQuery for some Javascript components, I was able to finish the majority of the webpage.  All that remains is to make edits and ensure that everything runs as smoothly as intended.</p>
+            <p>When we are in the progress of building our site, it is helpful to open the index.html file in a web browser, so that we  can see the changes which are being made.</p>
+            </br>
+          </div>
+          <div id="day6">
+            <h4 class="sub-header">Day 6: Polishing and Refining</h4>
+            <p>Before we publish our webpage, it is important to make sure that we have made any changes and polished it so that it remains uncluttered and pleasant to use.  In some instances, elements are not scaling properly with reduced screen sizes, so we must add additional modals dictating their behavior and styling.</p>
+            <p>After making final changes, we can push our files to the NCSSM cs2 server using <code>scp</code>.  In my case, I used <code>scp -r * li18s@cs2.ncssm.edu:~/public_html/</code>, but you will need to use your own login info.  The -r specifies recursion, so that folders are copied as well.  The * specifies that everything that is in the current directory is to be copied.
+            </br>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Samuel Li: Front End Web Development</p>
+      </div>
+    </footer>
+
+    <!-- <div class="container">
+
+      Main component for a primary marketing message or call to action 
+      <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+      </div>
+
+    </div>--> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>-->
+    <script src="js/bootstrap.min.js"></script>
+
+  </body>
+</html>
