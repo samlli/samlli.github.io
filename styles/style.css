@@ -8,9 +8,9 @@ body {
   color: #5a5a5a;
 }
 
-main {
+/* main {
   padding-top: 4rem;
-}
+} */
 
 
 /* CUSTOMIZE THE CAROUSEL
@@ -55,6 +55,10 @@ main {
   margin-left: .75rem;
 }
 
+.marketing {
+  padding-top: 4rem;
+}
+
 
 /* Featurettes
 ------------------------- */
@@ -91,4 +95,39 @@ main {
   .featurette-heading {
     margin-top: 7rem;
   }
+}
+
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 400;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
 }
