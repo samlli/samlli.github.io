@@ -31,7 +31,7 @@
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Welcome</h1>
-          <p class="lead text-muted">I'm from North Carolina, and am currently studying electrical & computer engineering, computer science, and mathematics at Duke University. In my free time, I build robots, design keyboards, and experiment with automation. Here are some of the projects I've worked on, accompanied by a brief description and skills that I have picked up along the way.
+          <p class="lead text-muted">I'm from North Carolina, and am currently studying electrical & computer engineering, computer science, and mathematics at Duke University. In my free time, I build robots, design keyboards, and experiment with automation. Here are some of the projects I've worked on, accompanied by a brief description and skills that I've picked up along the way.
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@
                         <div class="modal-content">
                           <div class="container-fluid">
                             <h1 class="jumbotron-heading">Robotic Basketball Hoop [in progress]</h1>
-                            <p class="lead text-muted">Jan. 2021-Present</p>
+                            <p class="lead text-muted">Jan. 2021-Ongoing</p>
                             <p class="lead text-muted">Skills: Fusion 360, Arduino, C</p>
                             <p class="lead">In a team of two I developed the hardware and software to create a moving basketball backboard.</p>
                             <video class="text-center" width="480" controls>
@@ -64,6 +64,7 @@
                             <p class="lead">To improve response speed, each arm has significant portions of material removed from its cross-section. Finite element analysis is carried out to identify structural weakpoints and reinforce as needed until the final arm meets strength and weight criteria.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/hoop_cad.png" alt="CAD of hoop in progress">
                             <p class="lead">Control consists of an wireless Arduino joystick transmitting to a receiving Arduino mounted to the backboard. Communication is done via SPI. The Arduino translates the potentiometer input into a tilt angle which it then uses to define the input to a pair of DM542T motor drivers.</p>
+                            <p class="lead">A planned extension will use a Kinect for Xbox One sensor along with NVidia Jetson Nano to carry out real time image processing to detect a thrown basketball and adjust the hoop automatically without user input</p>
                           </div>
                         </div>
                       </div>
@@ -118,7 +119,7 @@
                         <div class="modal-content">
                           <div class="container-fluid">
                             <h1 class="jumbotron-heading">Mechanical Keyboard Design</h1>
-                            <p class="lead text-muted">Ongoing</p>
+                            <p class="lead text-muted">2018-Ongoing</p>
                             <p class="lead text-muted">Skills: Fusion 360, rendering</p>
                             <p class="lead">As a hobby, I design mechanical keyboards for my own use and as commissions for other people. Each one is fully custom and unique, with different features and assembly methods.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="mechanicalkb/paragon.png" alt="paragon keyboard">
@@ -148,7 +149,7 @@
                         <div class="modal-content">
                           <div class="container-fluid">
                             <h1 class="jumbotron-heading">PCB Design</h1>
-                            <p class="lead text-muted">Ongoing</p>
+                            <p class="lead text-muted">2018-Ongoing</p>
                             <p class="lead text-muted">Skills: KiCad, C, circuit design, low level communications</p>
                             <p class="lead">As a hobby I design custom PCBs and write firmware to accompany mechanical keyboards, as well as for other applications as necessary.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit2.png" alt="designing a circuit in KiCad">
@@ -157,6 +158,7 @@
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit3.png" alt="larger pcb">
                             <p class="lead">The PCB pictured below features two microcontrollers communicating over I2C, as well as master/slave detection.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit1.jpg" alt="split keyboard pcb">
+                          </br>
                           </div>
                         </div>
                       </div>
@@ -214,6 +216,7 @@
                             <h2 class="jumbotron-heading">Raspberry Pi</h2>
                             <p class="lead">I used a Raspberry Pi in conjunction with a Kinect 360 sensor to indicate vehicle distance inside of a garage. The Raspberry Pi reads a depth point cloud provided by the Kinect, and identifies a moving object and its distance from the camera. It uses this depth to color a strip of addressabgle RGB lights.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/pi_depth.jpg" alt="raspberry pi depth sensor">
+                          </br>
                           </div>
                         </div>
                       </div>
@@ -240,6 +243,7 @@
                             <p class="lead text-muted">Skills: App development, Android Studio</p>
                             <p class="lead">As part of a team of 4 I worked on developing an Android app to help staff record and track painting locations within the Nasher Museum of Art. The app featured a QR code scanner which would be used to scan a QR code on a painting and painting storage location. It would keep track of these item location associations, and when prompted provide a csv file to be imported into the museum database.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/painting_scan.jpg" alt="painting qr code scanner">
+                          </br>
                           </div>
                         </div>
                       </div>
@@ -268,6 +272,8 @@
                             <p class="lead">As part of a team of 4 I used GIS and other data to produce a map of the optimal potential ski slope locations on Wasatch Peaks Ranch. Potential ski slopes were identified by looking at gradients, natural features, solar aspects, and snow basins. Additionally we considered congestion and travel times to minimize wait time between slopes, and between lifts. I used NetLogo to model lift wait times given counts of lifts, slopes, and skiiers. We created a final ski park with 200 km of trail, distributed over green, blue, and black difficulties.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/himcm_paths.png" alt="modeled ski paths">
                             <a href="https://drive.google.com/file/d/1LuSVJKW1-TdHygE4fmpfmczNfgEI9TBC/view?usp=sharing">Read the full report here</a>
+                          </br>
+                            <a href="https://www.comap.com/highschool/contests/himcm/2017_HiMCM_Results.pdf">Results, team 8201</a>
                           </div>
                         </div>
                       </div>
