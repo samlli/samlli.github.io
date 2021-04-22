@@ -62,7 +62,7 @@
                             </video>
                             <p class="lead">Mechanically, a pair of stepper motors is each connected via belt to a arm which can pivot inwards and outwards. A third, stationary mounting point is located below the steppers, and provides the third point needed to precisely define the plane of the backboard. The entire assembly is 3D printed, with bearings press fit into place to enable joints to rotate smoothly.</p>
                             <p class="lead">To improve response speed, each arm has significant portions of material removed from its cross-section. Finite element analysis is carried out to identify structural weakpoints and reinforce as needed until the final arm meets strength and weight criteria.</p>
-                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/hoop_fusion.png" alt="CAD of hoop in progress">
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/hoop_cad.png" alt="CAD of hoop in progress">
                             <p class="lead">Control consists of an wireless Arduino joystick transmitting to a receiving Arduino mounted to the backboard. Communication is done via SPI. The Arduino translates the potentiometer input into a tilt angle which it then uses to define the input to a pair of DM542T motor drivers.</p>
                           </div>
                         </div>
@@ -89,12 +89,12 @@
                             <p class="lead text-muted">Apr. 2019-May 2020</p>
                             <p class="lead text-muted">Skills: Fusion 360, SolidWorks, organization, electrical/mechanical design</p>
                             <p class="lead">I helped found and served as president of the Duke Combat Robotics club. As a club our goal is to expand engineering within the broader Duke community by presenting robotics in a fun way--combat.</p>
-                            <img class="img-fluid mx-auto rounded d-block" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/combatrobotics_overall.jpg" alt="team meeting">
+                            <img class="img-fluid mx-auto rounded d-block" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/combatrobotics_team.jpg" alt="team meeting">
                             <p class="lead">In addition to leading workshops, I designed and built three 12-pound hobbyweight class robots, as well as several 3-pound beetleweight class robots.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/cad.jpg" alt="CAD of robot in progress">
                             <p class="lead">The robots are built from a combination of waterjet and machined parts. This introduces constraints on part geometry that must be adhered to, such as radius, milling depths, and tolerances. Finite element analysis is used to analyze parts and maximize strength to weight ratio. This is especially important for combat robotics since spinning blades and other moving objects are capable of producing immense forces on impact.</p>
                             <p class="lead">Inside the robot, a reciever uses the input signal to drive an electronic speed controller connected to each motor. PID control is used to control the speed of a spinning blade when it makes contact, protecting the motor from burning itself out.
-                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/battlebot3.jpg" alt="wedge style robot">
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/battlebot_wedge.jpg" alt="wedge style robot">
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/wiring.jpg" alt="horizontal spinner showing interior">
                           </div>
                         </div>
@@ -150,19 +150,13 @@
                             <h1 class="jumbotron-heading">PCB Design</h1>
                             <p class="lead text-muted">Ongoing</p>
                             <p class="lead text-muted">Skills: KiCad, C, circuit design, low level communications</p>
-                            <p class="lead">As a hobby I design PCBs and write firmware to accompany mechanical keyboards, as well as for other applications as necessary.</p>
+                            <p class="lead">As a hobby I design custom PCBs and write firmware to accompany mechanical keyboards, as well as for other applications as necessary.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit2.png" alt="designing a circuit in KiCad">
-                            
-
-
-                            <h2 class="jumbotron-heading">Circuit Design</h2>
-                            <p class="lead">Circuits are designed and prepared for production using KiCad. In order to design a circuit each part is taken into account, which involves reading datasheets and other specifications for routing. As an example care must be taken for USB and other high speed bus routing, as well as capacitor placement for proper bypassing.</p>
-                            <h2 class="jumbotron-heading">Validation/Testing</h2>
-                            <p class="lead">Each PCB is ultimately tested and validated for errors in production and design.</p>
-                            <h2 class="jumbotron-heading">Firmware</h2>
-                            <p class="lead">In order to use the PCBs each controller must be flashed with firmware. For example a commonly used Atmega32u4 controller in a keyboard PCB. Writing the firmware involves C programming, explicitly dealing with low level memory addresses and space used.</p>
-                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit1.jpg" alt="testing a pcb">
+                            <p class="lead">Designing a circuit involves reading through datasheets to properly connect and route pins. Special care is taken when routing high frequency pins such as the USB data pins, to match trace lengths and impedances. Other examples include capacitor placement for proper bypassing.</p>
+                            <p class="lead">In addition making the PCB, I also develop the firmware that runs on them. A microcontroller I use often for mechanical keyboard designs is the Atmega32u4, which provides adequate I/O and memory capacity. The firmware is written in C and must handle low level memory management, and communication.</p>
                             <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit3.png" alt="larger pcb">
+                            <p class="lead">The PCB pictured below features two microcontrollers communicating over I2C, as well as master/slave detection.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit1.jpg" alt="split keyboard pcb">
                           </div>
                         </div>
                       </div>
@@ -173,7 +167,7 @@
             </div>
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" width="100%" src="resources/images/fpga.jpg" alt="Nexys A7 FPGA">
+                <img class="card-img-top" width="100%" src="resources/images/nexys.jpg" alt="Nexys A7 FPGA">
                 <div class="card-body">
                   <h5 class="card-title">FPGA Programming</h5>
                   <div class="d-flex justify-content-between align-items-center">
@@ -185,13 +179,12 @@
                         <div class="modal-content">
                           <div class="container-fluid">
                             <h1 class="jumbotron-heading">FPGA Programming</h1>
-                            <p class="lead text-muted">caption todo</p>
-                            <h2 class="jumbotron-heading">Pong</h2>
-                            <p class="lead">I used Verilog to write a variant of Pong that is running on a Nexys A7 FPGA. It utilizes both synchronous and asynchronous components to run. Reads input data from a USB port and outputs the display to a VGA monitor.</p>
-                            <h2 class="jumbotron-heading">Five Stage Processor</h2>
-                            <p class="lead">Wrote and executed a five stage pipelined processor in Verilog on the Nexys A7 FPGA.</p>
-                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="fpgaprog/pong.jpg" alt="pong displayed on VGA screen">
-                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="fpgaprog/processor.png" alt="wedge style robot">
+                            <p class="lead text-muted">Aug. 2020-Dec. 2020</p>
+                            <p class="lead text-muted">Skills: FPGA design, Verilog, pipelining, circuit reduction/optimization</p>
+                            <p class="lead">As a final project I developed a version of the game of Pong that runs on a Nexys A7 FPGA. The game supports multiple players, multiple balls, ball physics, and other personal addons.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="fpgaprog/pong.jpg" alt="pong displayed on VGA screen">
+                            <p class="lead">The version of pong is built upon a five stage pipelined processor I designed. The processor implements full bypassing, stalling, branch recovery, and a multi-cycle multiplier. I made optimizations to the circuit in order to maintain strict timing requirements throughout each stage of the pipeline. The five stages include fetch, decode, execute, memory access, and write-back.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="fpgaprog/processor.png" alt="processor outline">
                           </div>
                         </div>
                       </div>
@@ -214,40 +207,13 @@
                         <div class="modal-content">
                           <div class="container-fluid">
                             <h1 class="jumbotron-heading">Embedded Systems Programming</h1>
-                            <p class="lead text-muted">Used for home automation and controlling sensors.</p>
-                            <h2 class="jumbotron-heading">Arduino</h2>
-                            <p class="lead">I used Arduino to build a wheeled robot to self identify targets along a dynamic path. Programmed in Arduino and focused on PID control to drive and properly position the robot, as well as interface with various light sensors. Information is transmitted back to a computer using an onboard RF transmitter.</p>
+                            <p class="lead text-muted">2018-2019</p>
+                            <p class="lead text-muted">Skills: Arduino, Python, PID control, sensing</p>
+                            <p class="lead">I built an Arduino powered robot which was capable of following a dynamic path, self-identifying targets with an RGB sensor, and wirelessly communicating with other robots to coordinate tasks.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/idc.jpg" alt="Arduino robot">
                             <h2 class="jumbotron-heading">Raspberry Pi</h2>
-                            <p class="lead">I used a Raspberry Pi in conjunction with a Kinect 360 sensor to automate garage door operation. Programmed in Python and used the depth sensor on the Kinect to determine distance from an approaching vehicle. A set of addressable RGB lights connected to the Raspberry Pi are used to indicate distance to the driver for precise parking.</p>
-                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/idc.jpg" alt="Arduino robot">
-                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/pi.jpg" alt="raspberry pi depth sensor">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" width="100%" src="resources/images/mips.png" alt="3D wireframe with gradient vectors">
-                <div class="card-body">
-                  <h5 class="card-title">Processor Design</h5>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#processordesign">Read More</button>
-                    </div>
-                    <div class="modal fade bd-example-modal-lg" id="processordesign" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                          <div class="container-fluid">
-                            <h1 class="jumbotron-heading">Processor Design</h1>
-                            <p class="lead text-muted">Pipelining, bypassing, and other exceptions.</p>
-                            <h2 class="jumbotron-heading">Avoiding hazards</h2>
-                            <p class="lead">In April 2019, along with three other friends, we founded the combat robotics team at Duke University. The goal of the club is to engage students in engineering through competition and teach out to build a robot from the ground up.</p>
-                            <h2 class="jumbotron-heading">Stalling</h2>
-                            <h2 class="jumbotron-heading">Bypassing</h2>
+                            <p class="lead">I used a Raspberry Pi in conjunction with a Kinect 360 sensor to indicate vehicle distance inside of a garage. The Raspberry Pi reads a depth point cloud provided by the Kinect, and identifies a moving object and its distance from the camera. It uses this depth to color a strip of addressabgle RGB lights.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/pi_depth.jpg" alt="raspberry pi depth sensor">
                           </div>
                         </div>
                       </div>
@@ -260,7 +226,7 @@
               <div class="card mb-4 shadow-sm">
                 <img class="card-img-top" width="100%" src="resources/images/nasher_qr.jpg" alt="Nasher QR code scanner">
                 <div class="card-body">
-                  <h5 class="card-title">App Development</h5>
+                  <h5 class="card-title">Nasher Museum Painting Tracker</h5>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#appdevelopment">Read More</button>
@@ -269,12 +235,11 @@
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                           <div class="container-fluid">
-                            <h1 class="jumbotron-heading">App Development</h1>
-                            <p class="lead text-muted">Android Studio</p>
-                            <h2 class="jumbotron-heading">Avoiding hazards</h2>
-                            <p class="lead">In April 2019, along with three other friends, we founded the combat robotics team at Duke University. The goal of the club is to engage students in engineering through competition and teach out to build a robot from the ground up.</p>
-                            <h2 class="jumbotron-heading">Stalling</h2>
-                            <h2 class="jumbotron-heading">Bypassing</h2>
+                            <h1 class="jumbotron-heading">Nasher Museum Painting Tracker</h1>
+                            <p class="lead text-muted">Aug. 2018-Jan. 2019</p>
+                            <p class="lead text-muted">Skills: App development, Android Studio</p>
+                            <p class="lead">As part of a team of 4 I worked on developing an Android app to help staff record and track painting locations within the Nasher Museum of Art. The app featured a QR code scanner which would be used to scan a QR code on a painting and painting storage location. It would keep track of these item location associations, and when prompted provide a csv file to be imported into the museum database.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/painting_scan.jpg" alt="painting qr code scanner">
                           </div>
                         </div>
                       </div>
@@ -287,7 +252,7 @@
               <div class="card mb-4 shadow-sm">
                 <img class="card-img-top" width="100%" src="resources/images/wasatch.png" alt="3D wireframe with gradient vectors">
                 <div class="card-body">
-                  <h5 class="card-title">Mathematical Modeling</h5>
+                  <h5 class="card-title">Mathematical Modeling, HiMCM</h5>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#mathmod">Read More</button>
@@ -296,12 +261,13 @@
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                           <div class="container-fluid">
-                            <h1 class="jumbotron-heading">Mathematical Modeling</h1>
-                            <p class="lead text-muted">Android Studio</p>
-                            <h2 class="jumbotron-heading">Avoiding hazards</h2>
-                            <p class="lead">In April 2019, along with three other friends, we founded the combat robotics team at Duke University. The goal of the club is to engage students in engineering through competition and teach out to build a robot from the ground up.</p>
-                            <h2 class="jumbotron-heading">Stalling</h2>
-                            <h2 class="jumbotron-heading">Bypassing</h2>
+                            <h1 class="jumbotron-heading">Mathematical Modeling, HiMCM</h1>
+                            <p class="lead text-muted">2017</p>
+                            <p class="lead text-muted">Skills: Modeling, mathematical analysis, data wrangling, NetLogo</p>
+                            <p class="lead text-muted">Placed top 1% out of 938 submissions to 2017 HiMCM Mathematical Modeling Contest</p>
+                            <p class="lead">As part of a team of 4 I used GIS and other data to produce a map of the optimal potential ski slope locations on Wasatch Peaks Ranch. Potential ski slopes were identified by looking at gradients, natural features, solar aspects, and snow basins. Additionally we considered congestion and travel times to minimize wait time between slopes, and between lifts. I used NetLogo to model lift wait times given counts of lifts, slopes, and skiiers. We created a final ski park with 200 km of trail, distributed over green, blue, and black difficulties.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/himcm_paths.png" alt="modeled ski paths">
+                            <a href="https://drive.google.com/file/d/1LuSVJKW1-TdHygE4fmpfmczNfgEI9TBC/view?usp=sharing">Read the full report here</a>
                           </div>
                         </div>
                       </div>
