@@ -10,171 +10,318 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
   </head>
-  <body>
-    <!-- <div class="bd-example">
-      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="resources/images/battlebot_original.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://via.placeholder.com/1600x500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="https://via.placeholder.com/1600x500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div> -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg> -->
-          <img src="resources/images/battlebot_carousel.jpg" alt="Duke Combat Robotics">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Combat Robotics</h1>
-              <p>InVertigo vertical spinner combat robot.</p>
-              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg> -->
-          <img src="resources/images/ta90_carousel.png" alt="Split 65 ergonomic mechanical keyboard">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Split 65 Ergonomic Mechanical Keyboard</h1>
-              <p>Custom ergonomic mechanical keyboard.</p>
-              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <!-- <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg> -->
-          <img src="resources/images/idc_carousel.jpg" alt="Integrated design challenge">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Integrated Design Challenge</h1>
-              <p>Arduino bot capable of communications and sensing.</p>
-              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
+  <body id="top">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-      <!-- <a class="navbar-brand" href="#">
-        <img src="https://via.placeholder.com/36">
-      </a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-md-center" id="navbar" style="justify-content: center!important;">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="/">Samuel Li</a>
+            <a class="nav-link" href="#top">Samuel Li</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about/">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="projects/">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="hobbies/">Hobbies</a>
+            <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
       </div>
     </nav>
 
     <main role="main">
-      <div class="container marketing">
-        <!-- START THE FEATURETTES -->
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Welcome</h1>
+          <p class="lead text-muted">I'm from North Carolina, and am currently studying electrical & computer engineering, computer science, and mathematics at Duke University. In my free time, I build robots, design keyboards, and experiment with automation. Here are some of the projects I've worked on, accompanied by a brief description and skills that I have picked up along the way.
+          </p>
+        </div>
+      </section>
 
-        <!-- <hr class="featurette-divider"> -->
+      <div class="album py-5 bg-light">
+        <div class="container">
 
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">About me. <span class="text-muted">Hello there.</span></h2>
-            <p class="lead">I'm from North Carolina, and am currently studying electrical & computer engineering and computer science at Duke University. This page is a chance for me to show off some of my interests and projects I'm proudest of.</p>
-          </div>
-          <div class="col-md-5">
-            <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/me.jpg" alt="Samuel Li">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/hoop.png" alt="Tilting basketball hoop">
+                <div class="card-body">
+                  <h5 class="card-title">Robotic Basketball Hoop</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#bballhoop">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="bballhoop" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">Robotic Basketball Hoop [in progress]</h1>
+                            <p class="lead text-muted">Jan. 2021-Present</p>
+                            <p class="lead text-muted">Skills: Fusion 360, Arduino, C</p>
+                            <p class="lead">In a team of two I developed the hardware and software to create a moving basketball backboard.</p>
+                            <video class="text-center" width="480" controls>
+                              <source src="resources/videos/hoop.mp4" type="video/mp4">
+                            </video>
+                            <p class="lead">Mechanically, a pair of stepper motors is each connected via belt to a arm which can pivot inwards and outwards. A third, stationary mounting point is located below the steppers, and provides the third point needed to precisely define the plane of the backboard. The entire assembly is 3D printed, with bearings press fit into place to enable joints to rotate smoothly.</p>
+                            <p class="lead">To improve response speed, each arm has significant portions of material removed from its cross-section. Finite element analysis is carried out to identify structural weakpoints and reinforce as needed until the final arm meets strength and weight criteria.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/hoop_fusion.png" alt="CAD of hoop in progress">
+                            <p class="lead">Control consists of an wireless Arduino joystick transmitting to a receiving Arduino mounted to the backboard. Communication is done via SPI. The Arduino translates the potentiometer input into a tilt angle which it then uses to define the input to a pair of DM542T motor drivers.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/battlebot_2.jpg" alt="Duke Combat Robotics">
+                <div class="card-body">
+                  <h5 class="card-title">Combat Robotics</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#combatrobotics">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="combatrobotics" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">Combat Robotics</h1>
+                            <p class="lead text-muted">Apr. 2019-May 2020</p>
+                            <p class="lead text-muted">Skills: Fusion 360, SolidWorks, organization, electrical/mechanical design</p>
+                            <p class="lead">I helped found and served as president of the Duke Combat Robotics club. As a club our goal is to expand engineering within the broader Duke community by presenting robotics in a fun way--combat.</p>
+                            <img class="img-fluid mx-auto rounded d-block" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/combatrobotics_overall.jpg" alt="team meeting">
+                            <p class="lead">In addition to leading workshops, I designed and built three 12-pound hobbyweight class robots, as well as several 3-pound beetleweight class robots.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/cad.jpg" alt="CAD of robot in progress">
+                            <p class="lead">The robots are built from a combination of waterjet and machined parts. This introduces constraints on part geometry that must be adhered to, such as radius, milling depths, and tolerances. Finite element analysis is used to analyze parts and maximize strength to weight ratio. This is especially important for combat robotics since spinning blades and other moving objects are capable of producing immense forces on impact.</p>
+                            <p class="lead">Inside the robot, a reciever uses the input signal to drive an electronic speed controller connected to each motor. PID control is used to control the speed of a spinning blade when it makes contact, protecting the motor from burning itself out.
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/battlebot3.jpg" alt="wedge style robot">
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="combatrobotics/wiring.jpg" alt="horizontal spinner showing interior">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/floating_view.png" alt="Arc TKL keyboard">
+                <div class="card-body">
+                  <h5 class="card-title">Mechanical Keyboard Design</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#mechanicalkb">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="mechanicalkb" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">Mechanical Keyboard Design</h1>
+                            <p class="lead text-muted">Ongoing</p>
+                            <p class="lead text-muted">Skills: Fusion 360, rendering</p>
+                            <p class="lead">As a hobby, I design mechanical keyboards for my own use and as commissions for other people. Each one is fully custom and unique, with different features and assembly methods.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="mechanicalkb/paragon.png" alt="paragon keyboard">
+                            <p class="lead">Mechanical keyboards are entirely machined from solid blocks of 6061 aluminum, which poses unique design considerations. Some considerations of design for manufacturing involve optimizing tool paths, reducing blind holes, and minimizing wall heights etc. Tolerances are extremely tight, and each keyboard often requires designing a unique PCB for it.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="mechanicalkb/arc.png" alt="arc keyboard">
+                            <p class="lead">Each keyboard consists of several parts, at minimum which include a top piece, bottom piece, and internal switch plate. Other parts are often used, such as weights or dampeners to alter the sound profile, or gaskets and other o-rings to alter the stiffness of typing.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="mechanicalkb/explodedview.png" alt="exploded keyboard view">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/steno_pcb.jpg" alt="Stenography PCB">
+                <div class="card-body">
+                  <h5 class="card-title">PCB Design</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#pcbdesign">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="pcbdesign" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">PCB Design</h1>
+                            <p class="lead text-muted">Ongoing</p>
+                            <p class="lead text-muted">Skills: KiCad, C, circuit design, low level communications</p>
+                            <p class="lead">As a hobby I design PCBs and write firmware to accompany mechanical keyboards, as well as for other applications as necessary.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit2.png" alt="designing a circuit in KiCad">
+                            
+
+
+                            <h2 class="jumbotron-heading">Circuit Design</h2>
+                            <p class="lead">Circuits are designed and prepared for production using KiCad. In order to design a circuit each part is taken into account, which involves reading datasheets and other specifications for routing. As an example care must be taken for USB and other high speed bus routing, as well as capacitor placement for proper bypassing.</p>
+                            <h2 class="jumbotron-heading">Validation/Testing</h2>
+                            <p class="lead">Each PCB is ultimately tested and validated for errors in production and design.</p>
+                            <h2 class="jumbotron-heading">Firmware</h2>
+                            <p class="lead">In order to use the PCBs each controller must be flashed with firmware. For example a commonly used Atmega32u4 controller in a keyboard PCB. Writing the firmware involves C programming, explicitly dealing with low level memory addresses and space used.</p>
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit1.jpg" alt="testing a pcb">
+                            <img class="img-fluid mx-auto rounded d-block" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="pcbdesign/circuit3.png" alt="larger pcb">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/fpga.jpg" alt="Nexys A7 FPGA">
+                <div class="card-body">
+                  <h5 class="card-title">FPGA Programming</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#fpgaprog">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="fpgaprog" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">FPGA Programming</h1>
+                            <p class="lead text-muted">caption todo</p>
+                            <h2 class="jumbotron-heading">Pong</h2>
+                            <p class="lead">I used Verilog to write a variant of Pong that is running on a Nexys A7 FPGA. It utilizes both synchronous and asynchronous components to run. Reads input data from a USB port and outputs the display to a VGA monitor.</p>
+                            <h2 class="jumbotron-heading">Five Stage Processor</h2>
+                            <p class="lead">Wrote and executed a five stage pipelined processor in Verilog on the Nexys A7 FPGA.</p>
+                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="fpgaprog/pong.jpg" alt="pong displayed on VGA screen">
+                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="fpgaprog/processor.png" alt="wedge style robot">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/idc.jpg" alt="Integrated design challenge">
+                <div class="card-body">
+                  <h5 class="card-title">Embedded Systems Programming</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#embeddedsystems">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="embeddedsystems" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">Embedded Systems Programming</h1>
+                            <p class="lead text-muted">Used for home automation and controlling sensors.</p>
+                            <h2 class="jumbotron-heading">Arduino</h2>
+                            <p class="lead">I used Arduino to build a wheeled robot to self identify targets along a dynamic path. Programmed in Arduino and focused on PID control to drive and properly position the robot, as well as interface with various light sensors. Information is transmitted back to a computer using an onboard RF transmitter.</p>
+                            <h2 class="jumbotron-heading">Raspberry Pi</h2>
+                            <p class="lead">I used a Raspberry Pi in conjunction with a Kinect 360 sensor to automate garage door operation. Programmed in Python and used the depth sensor on the Kinect to determine distance from an approaching vehicle. A set of addressable RGB lights connected to the Raspberry Pi are used to indicate distance to the driver for precise parking.</p>
+                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/idc.jpg" alt="Arduino robot">
+                            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="embeddedsystems/pi.jpg" alt="raspberry pi depth sensor">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/mips.png" alt="3D wireframe with gradient vectors">
+                <div class="card-body">
+                  <h5 class="card-title">Processor Design</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#processordesign">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="processordesign" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">Processor Design</h1>
+                            <p class="lead text-muted">Pipelining, bypassing, and other exceptions.</p>
+                            <h2 class="jumbotron-heading">Avoiding hazards</h2>
+                            <p class="lead">In April 2019, along with three other friends, we founded the combat robotics team at Duke University. The goal of the club is to engage students in engineering through competition and teach out to build a robot from the ground up.</p>
+                            <h2 class="jumbotron-heading">Stalling</h2>
+                            <h2 class="jumbotron-heading">Bypassing</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/nasher_qr.jpg" alt="Nasher QR code scanner">
+                <div class="card-body">
+                  <h5 class="card-title">App Development</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#appdevelopment">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="appdevelopment" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">App Development</h1>
+                            <p class="lead text-muted">Android Studio</p>
+                            <h2 class="jumbotron-heading">Avoiding hazards</h2>
+                            <p class="lead">In April 2019, along with three other friends, we founded the combat robotics team at Duke University. The goal of the club is to engage students in engineering through competition and teach out to build a robot from the ground up.</p>
+                            <h2 class="jumbotron-heading">Stalling</h2>
+                            <h2 class="jumbotron-heading">Bypassing</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" width="100%" src="resources/images/wasatch.png" alt="3D wireframe with gradient vectors">
+                <div class="card-body">
+                  <h5 class="card-title">Mathematical Modeling</h5>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#mathmod">Read More</button>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="mathmod" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="container-fluid">
+                            <h1 class="jumbotron-heading">Mathematical Modeling</h1>
+                            <p class="lead text-muted">Android Studio</p>
+                            <h2 class="jumbotron-heading">Avoiding hazards</h2>
+                            <p class="lead">In April 2019, along with three other friends, we founded the combat robotics team at Duke University. The goal of the club is to engage students in engineering through competition and teach out to build a robot from the ground up.</p>
+                            <h2 class="jumbotron-heading">Stalling</h2>
+                            <h2 class="jumbotron-heading">Bypassing</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Some projects. <span class="text-muted">And other cool stuff.</span></h2>
-            <p class="lead">In my free time, I build robots, design keyboards, and work on this website. Here's some of the coolest projects I've worked on and skills I've picked up along the way.</p>
-          </div>
-          <div class="col-md-5 order-md-1">
-            <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/floating_view.png" alt="Arc TKL keyboard">
-          </div>
+      <section class="jumbotron text-center" id="contact">
+        <div class="container">
+          <h1 class="jumbotron-heading">Contact</h1>
+          <p class="lead text-muted">samuel.b.li@duke.edu
+          </p>
         </div>
+      </section>
 
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, my hobbies. <span class="text-muted">Stuff to unwind with.</span></h2>
-            <p class="lead">There's always time to row at Lake Michie or bomb hills on my longboard. This is what I do when I don't want to do anything else. No major injuries so far!</p>
-          </div>
-          <div class="col-md-5">
-            <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
-            <img class="featurette-image img-fluid mx-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" src="resources/images/hooch.png" alt="Head of the Hooch">
-          </div>
-        </div>
-
-        <!-- <hr class="featurette-divider"> -->
-
-        <!-- /END THE FEATURETTES -->
-
-      </div><!-- /.container -->
     </main>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

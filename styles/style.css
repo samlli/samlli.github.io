@@ -138,3 +138,8 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+/* enable smooth scrolling to position*/
+html {
+  scroll-behavior: smooth;
+}
